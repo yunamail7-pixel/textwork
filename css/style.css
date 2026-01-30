@@ -129,25 +129,21 @@ h6 {
     /* Added letter spacing for professional look */
 }
 
-/* Glassmorphism Styles */
+/* Glassmorphism Styles (Purged: Removed blur for maximum clarity) */
 .glass-panel {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.3);
     transition: background 0.3s, border 0.3s;
 }
 
 [data-theme="dark"] .glass-panel {
-    background: rgba(30, 41, 59, 0.7);
+    background: rgba(30, 41, 59, 0.98);
     border-color: rgba(255, 255, 255, 0.1);
 }
 
 
 .dark-glass {
-    background: rgba(15, 23, 42, 0.55);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.95);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -341,7 +337,7 @@ select:focus {
 
 /* Navbar */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: var(--surface);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -351,7 +347,7 @@ select:focus {
 }
 
 [data-theme="dark"] .navbar {
-    background-color: rgba(15, 23, 42, 0.95);
+    background-color: var(--surface);
 }
 
 
