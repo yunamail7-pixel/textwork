@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務故事 - 心雲基金會</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Prototype Notice Banner -->
+    <div
+        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="heart-handshake" color="var(--primary)"></i>
+                心雲基金會
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">關於心雲</a></li>
+                <li><a href="services.html" class="nav-link">服務項目</a></li>
+                <li class="dropdown">
+                    <a href="blog.html" class="nav-link dropdown-toggle active">愛心足跡</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="stories.html" class="dropdown-item">服務故事</a></li>
+                        <li><a href="volunteer-exp.html" class="dropdown-item">志工心得</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" class="nav-link">最新消息</a></li>
+                <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
+                <li><a href="assistance.html" class="btn btn-cta">我需要協助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header section text-center parallax-bg"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/blog.png');">
+        <div class="container reveal">
+            <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">服務故事</h1>
+            <p style="color: white; font-size: 1.2rem; opacity: 0.95; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                每一個微笑背後，都有一個動人的轉折</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div id="dynamicStoriesGrid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem;">
+                <!-- 動態注入內容 -->
+            </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                    const storiesData = JSON.parse(localStorage.getItem('xinyun_stories_data')) || [];
+                    const container = document.getElementById('dynamicStoriesGrid');
+
+                    if (storiesData.length > 0) {
+                        container.innerHTML = storiesData.map((item, index) => `
+                            <article class="card reveal active" style="padding: 0; overflow: hidden; transition-delay: ${index * 100}ms;">
+                                <img src="${item.image}" alt="${item.title}" style="width: 100%; height: 250px; object-fit: cover;">
+                                <div style="padding: 2rem;">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                        <span style="display: inline-block; padding: 0.25rem 0.75rem; background: rgba(8, 145, 178, 0.1); color: var(--primary); border-radius: 2rem; font-size: 0.8rem;">${item.category}</span>
+                                        <span style="font-size: 0.8rem; color: #94a3b8;"><i data-lucide="map-pin" size="12" style="display:inline; margin-right:2px;"></i> ${item.location}</span>
+                                    </div>
+                                    <h3 class="mb-4" style="cursor:pointer;" onclick="showPublicDetail(${index})">${item.title}</h3>
+                                    <p class="text-muted mb-6">${item.summary}</p>
+                                    <button onclick="showPublicDetail(${index})" class="btn btn-secondary" style="width: 100%;">閱讀詳情</button>
+                                </div>
+                            </article>
+                        `).join('');
+                        if (window.lucide) lucide.createIcons();
+                    }
+                });
+
+                function showPublicDetail(index) {
+                    const storiesData = JSON.parse(localStorage.getItem('xinyun_stories_data')) || [
+                        { title: '獨居不孤單：林阿嬤的溫暖午餐', category: '弱勢關懷', location: '新北山區', content: '高齡 85 歲的林阿嬤獨自居住在偏遠山區，自從基金會的送餐服務接入後，阿嬤不僅每天能吃到熱騰騰的飯菜，更有志工定期的關懷陪伴。' },
+                        { title: '翻轉未來的筆記本：小明的數位學習路', category: '教育推廣', location: '屏東偏鄉', content: '在資源小組的協助下，小明透過基金會提供的數位教室與線上導師，克服了城鄉差距的隔閡。數位學習不僅帶給他知識，更給了他看見世界的窗。' }
+                    ];
+                    const item = storiesData[index];
+                    if (!item) return;
+
+                    document.getElementById('publicModalTitle').textContent = item.title;
+                    document.getElementById('publicModalMeta').textContent = `${item.location} | ${item.category}`;
+                    document.getElementById('publicModalContent').textContent = item.content || item.summary;
+
+                    document.getElementById('publicDetailModal').style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    if (window.lucide) lucide.createIcons();
+                }
+
+                function closePublicModal() {
+                    document.getElementById('publicDetailModal').style.display = 'none';
+                    document.body.style.overflow = '';
+                }
+            </script>
+
+            <div class="text-center mt-12 reveal">
+                <button class="btn btn-primary">加載更多故事</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo mb-4">
+                        <i data-lucide="heart-handshake"></i> 心雲基金會
+                    </div>
+                    <p class="text-muted">致力於為社會帶來正向改變，關懷弱勢，推廣教育。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>網站地圖</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">關於心雲</a></li>
+                        <li><a href="services.html">服務項目</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="assistance.html">我需要協助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>聯絡資訊</h4>
+                    <ul class="footer-links">
+                        <li><i data-lucide="map-pin" size="16" style="display:inline; margin-right:4px;"></i> 台北市信義區...
+                        </li>
+                        <li><i data-lucide="phone" size="16" style="display:inline; margin-right:4px;"></i> (02)
+                            1234-5678</li>
+                        <li><i data-lucide="mail" size="16" style="display:inline; margin-right:4px;"></i>
+                            info@xinyun.org.tw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>關注我們</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Line"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
+                class="reveal">
+                <div style="max-width: 500px;">
+                    <h4 class="mb-2">訂閱心雲電子報</h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
+                </div>
+                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
+                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
+                    <input type="email" placeholder="您的電子郵件"
+                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
+                        required>
+                    <button type="submit" class="btn btn-primary">訂閱</button>
+                </form>
+            </div>
+            <div class="copyright">
+                &copy; 2026 心雲基金會. All rights reserved. (網站建立測試示範)
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

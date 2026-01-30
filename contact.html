@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>聯絡我們 - 心雲基金會</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 500;
+            color: var(--text);
+        }
+
+        .form-input,
+        .form-textarea {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.2s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(8, 145, 178, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Prototype Notice Banner -->
+    <div
+        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="heart-handshake" color="var(--primary)"></i>
+                心雲基金會
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">關於心雲</a></li>
+                <li><a href="services.html" class="nav-link">服務項目</a></li>
+                <li class="dropdown">
+                    <a href="blog.html" class="nav-link dropdown-toggle">愛心足跡</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="stories.html" class="dropdown-item">服務故事</a></li>
+                        <li><a href="volunteer-exp.html" class="dropdown-item">志工心得</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" class="nav-link">最新消息</a></li>
+                <li><a href="contact.html" class="nav-link active">聯絡我們</a></li>
+                <li><a href="assistance.html" class="btn btn-cta">我需要協助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header section text-center parallax-bg"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('images/contact.png');">
+        <div class="container reveal">
+            <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">聯絡我們</h1>
+            <p style="color: white; font-size: 1.1rem; opacity: 0.95; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                我們期待聽到您的聲音</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 5rem;">
+                <!-- Contact Info -->
+                <div class="reveal">
+                    <h2 class="mb-4">聯絡資訊</h2>
+                    <p class="text-muted mb-10">如果您有任何疑問、合作意向或需要協助，歡迎透過以下方式聯絡我們，我們將於 24 小時內回覆您。</p>
+
+                    <ul style="display: flex; flex-direction: column; gap: 2.5rem;">
+                        <li style="display: flex; gap: 1.25rem;">
+                            <div
+                                style="background-color: rgba(8, 145, 178, 0.1); padding: 1rem; border-radius: 1rem; height: fit-content; flex-shrink: 0;">
+                                <i data-lucide="map-pin" color="var(--primary)" size="24"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">基金會總部</h3>
+                                <p class="text-muted" style="line-height: 1.6;">110 台北市信義區信義路五段 7 號 88 樓<br>(台北 101 大樓內)
+                                </p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1.25rem;">
+                            <div
+                                style="background-color: rgba(8, 145, 178, 0.1); padding: 1rem; border-radius: 1rem; height: fit-content; flex-shrink: 0;">
+                                <i data-lucide="phone-call" color="var(--primary)" size="24"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">諮詢專線</h3>
+                                <p class="text-muted"
+                                    style="font-size: 1.125rem; font-weight: 600; color: var(--primary);">(02) 1234-5678
+                                </p>
+                                <p class="text-muted" style="font-size: 0.875rem;">服務時間：週一至週五 09:00 - 18:30</p>
+                            </div>
+                        </li>
+                        <li style="display: flex; gap: 1.25rem;">
+                            <div
+                                style="background-color: rgba(8, 145, 178, 0.1); padding: 1rem; border-radius: 1rem; height: fit-content; flex-shrink: 0;">
+                                <i data-lucide="mail" color="var(--primary)" size="24"></i>
+                            </div>
+                            <div>
+                                <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem; color: var(--text);">電子信箱</h3>
+                                <p class="text-muted"><a href="mailto:services@xinyun.org.tw"
+                                        style="color: var(--primary); text-decoration: none; border-bottom: 1px solid var(--primary);">services@xinyun.org.tw</a>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <div style="margin-top: 4rem; padding: 2rem; background: var(--background); border-radius: 1.5rem;">
+                        <h4 class="mb-4">社群媒體</h4>
+                        <div style="display: flex; gap: 1rem;">
+                            <a href="#" class="btn btn-secondary"
+                                style="border-radius: 50%; width: 3.5rem; height: 3.5rem; padding: 0; background: white; border: none; box-shadow: var(--shadow-sm);"><i
+                                    data-lucide="facebook"></i></a>
+                            <a href="#" class="btn btn-secondary"
+                                style="border-radius: 50%; width: 3.5rem; height: 3.5rem; padding: 0; background: white; border: none; box-shadow: var(--shadow-sm);"><i
+                                    data-lucide="instagram"></i></a>
+                            <a href="#" class="btn btn-secondary"
+                                style="border-radius: 50%; width: 3.5rem; height: 3.5rem; padding: 0; background: white; border: none; box-shadow: var(--shadow-sm);"><i
+                                    data-lucide="message-square"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="reveal">
+                    <div class="card" style="padding: 3rem; box-shadow: var(--shadow-lg); border: none;">
+                        <h2 class="mb-8">傳送訊息</h2>
+                        <form class="contact-form" action="#" method="POST"
+                            onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-center py-12\'><i data-lucide=\'check-circle\' size=\'64\' color=\'#10b981\'></i><h3 class=\'mt-4\'>訊息已成功送出！</h3><p class=\'text-muted\'>我們將會盡快與您聯繫。</p></div>'; lucide.createIcons();">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">您的姓名</label>
+                                    <input type="text" id="name" name="name" class="form-input" required
+                                        placeholder="張小明">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="form-label">聯絡電話</label>
+                                    <input type="tel" id="phone" name="phone" class="form-input"
+                                        placeholder="0912-345-678">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" class="form-label">電子郵件</label>
+                                <input type="email" id="email" name="email" class="form-input" required
+                                    placeholder="yourname@gmail.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" class="form-label">諮詢類別</label>
+                                <select id="subject" name="subject" class="form-input">
+                                    <option value="general">一般諮詢</option>
+                                    <option value="donate">捐款/徵信相關</option>
+                                    <option value="volunteer">志工/培訓加入</option>
+                                    <option value="business">企業合作企劃</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" class="form-label">訊息內容</label>
+                                <textarea id="message" name="message" class="form-textarea" required
+                                    placeholder="請描述您的需求或建議..."></textarea>
+                            </div>
+                            <div style="display: flex; align-items: flex-start; gap: 0.75rem; margin-top: 0.5rem;">
+                                <input type="checkbox" id="privacy" required style="margin-top: 0.25rem;">
+                                <label for="privacy" style="font-size: 0.875rem; color: var(--text-muted);">我同意心雲基金會依據<a
+                                        href="#" style="color: var(--primary);">隱私權條款</a>處理我的個人資訊。</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary"
+                                style="width: 100%; padding: 1rem; border-radius: 0.75rem; font-size: 1.125rem; margin-top: 1rem;">送出申請</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 6rem;">
+                <h2 class="text-center mb-10">常見問題 FAQ</h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                    <div class="card" style="padding: 2rem;">
+                        <h4 class="mb-2" style="color: var(--primary);">Q: 如何確認我的捐款已成功？</h4>
+                        <p class="text-muted" style="font-size: 0.95rem;">
+                            若是線上刷卡，成功後將會立即收到系統確認信。若是轉帳捐款，我們將在入帳後三個工作日內於網站徵信系統公告，並寄發電子收據。</p>
+                    </div>
+                    <div class="card" style="padding: 2rem;">
+                        <h4 class="mb-2" style="color: var(--primary);">Q: 想要加入志工行列有條件限制嗎？</h4>
+                        <p class="text-muted" style="font-size: 0.95rem;">
+                            我們歡迎各行各業有愛心的朋友加入。部分專業服務（如輔導、法律諮詢）需具備相關證照，普通關懷活動僅需參與基礎培力課程即可。</p>
+                    </div>
+                    <div class="card" style="padding: 2rem;">
+                        <h4 class="mb-2" style="color: var(--primary);">Q: 可以指定捐款專款專用嗎？</h4>
+                        <p class="text-muted" style="font-size: 0.95rem;">
+                            可以的。在線上捐款或轉帳備註中，您可以指定「偏鄉教育」、「老人關懷」或「急難救助」。若未指定，將由基金會統籌運用於當年度最急迫的計畫中。</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map -->
+            <div style="margin-top: 6rem;">
+                <h2 class="text-center mb-10">交通位置</h2>
+                <div
+                    style="position: relative; border-radius: 2rem; overflow: hidden; height: 500px; box-shadow: var(--shadow-lg);">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.002882352136!2d121.5645582!3d25.0339639!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abb6da9c9e11%3A0xf2914092496a7751!2sTaipei%20101!5e0!3m2!1sen!2stw!4v1700000000000!5m2!1sen!2stw"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- (Same footer content) -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo mb-4">
+                        <i data-lucide="heart-handshake"></i> 心雲基金會
+                    </div>
+                    <p class="text-muted">致力於為社會帶來正向改變，關懷弱勢，推廣教育。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>網站地圖</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">關於心雲</a></li>
+                        <li><a href="services.html">服務項目</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="assistance.html">我需要協助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>聯絡資訊</h4>
+                    <ul class="footer-links">
+                        <li><i data-lucide="map-pin" size="16" style="display:inline; margin-right:4px;"></i> 台北市信義區...
+                        </li>
+                        <li><i data-lucide="phone" size="16" style="display:inline; margin-right:4px;"></i> (02)
+                            1234-5678</li>
+                        <li><i data-lucide="mail" size="16" style="display:inline; margin-right:4px;"></i>
+                            info@xinyun.org.tw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>關注我們</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Line"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
+                class="reveal">
+                <div style="max-width: 500px;">
+                    <h4 class="mb-2">訂閱心雲電子報</h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
+                </div>
+                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
+                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
+                    <input type="email" placeholder="您的電子郵件"
+                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
+                        required>
+                    <button type="submit" class="btn btn-primary">訂閱</button>
+                </form>
+            </div>
+            <div class="copyright">
+                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

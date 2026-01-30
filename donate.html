@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我要捐款 - 心雲基金會</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Prototype Notice Banner -->
+    <div
+        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="heart-handshake" color="var(--primary)"></i>
+                心雲基金會
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">關於心雲</a></li>
+                <li><a href="services.html" class="nav-link">服務項目</a></li>
+                <li class="dropdown">
+                    <a href="blog.html" class="nav-link dropdown-toggle">愛心足跡</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="stories.html" class="dropdown-item">服務故事</a></li>
+                        <li><a href="volunteer-exp.html" class="dropdown-item">志工心得</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" class="nav-link">最新消息</a></li>
+                <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
+                <li><a href="assistance.html" class="btn btn-cta">我需要協助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header section text-center parallax-bg"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('images/donate.png');">
+        <div class="container reveal">
+            <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">我要捐款</h1>
+            <p style="color: white; font-size: 1.1rem; opacity: 0.95; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                您的愛心，能點亮生命的希望</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div style="background: #fffbeb; border: 1px solid #fef3c7; color: #92400e; padding: 1rem; border-radius: 0.75rem; text-align: center; margin-bottom: 3rem;"
+                class="reveal">
+                <i data-lucide="alert-triangle" size="18"
+                    style="display:inline; margin-right:8px; vertical-align:middle;"></i>
+                <strong>網站建立測試中：</strong> 本頁面所展示之銀行帳號、捐款紀錄均為示範排版資料，請勿進行實際匯款或轉帳。
+            </div>
+            <div class="text-center mb-12 reveal">
+                <h2 class="mb-4">選擇您的支持方式</h2>
+                <p class="text-muted">不論金額大小，您的每一份支持都是改變社會的力量。</p>
+            </div>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
+                <!-- Method 1 -->
+                <div class="card text-center reveal"
+                    style="padding: 3rem 2rem; border-bottom: 4px solid var(--primary);">
+                    <div
+                        style="background: rgba(8, 145, 178, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                        <i data-lucide="credit-card" size="40" color="var(--primary)"></i>
+                    </div>
+                    <h3>線上刷卡</h3>
+                    <p class="text-muted mb-8">支援各家銀行信用卡，您可以選擇「單次捐款」或「定期定額」支持。穩定支持能讓我們的服務更精準計畫。</p>
+                    <a href="#" class="btn btn-primary" style="width: 100%;">立即線上捐款</a>
+                </div>
+
+                <!-- Method 2 -->
+                <div class="card text-center reveal"
+                    style="padding: 3rem 2rem; border-bottom: 4px solid var(--primary);">
+                    <div
+                        style="background: rgba(8, 145, 178, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                        <i data-lucide="landmark" size="40" color="var(--primary)"></i>
+                    </div>
+                    <h3>銀行/ATM 轉帳</h3>
+                    <div class="text-muted mb-6"
+                        style="text-align: left; background: var(--background); padding: 1.5rem; border-radius: 1rem; font-size: 0.95rem;">
+                        <p style="margin-bottom: 0.5rem;"><strong>銀行：</strong>OO 銀行 (000)</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>分行：</strong>XXXX 分行</p>
+                        <p style="margin-bottom: 0.5rem;"><strong>戶名：</strong>財團法人心雲基金會 (測試用)</p>
+                        <p><strong>帳號：</strong>0000-0000-00000</p>
+                    </div>
+                    <p style="font-size: 0.85rem; color: #ef4444;">*轉帳後請於「聯絡我們」填寫格式或來信告知。</p>
+                </div>
+
+                <!-- Method 3 -->
+                <div class="card text-center reveal"
+                    style="padding: 3rem 2rem; border-bottom: 4px solid var(--primary);">
+                    <div
+                        style="background: rgba(8, 145, 178, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
+                        <i data-lucide="gift" size="40" color="var(--primary)"></i>
+                    </div>
+                    <h3>物資捐贈</h3>
+                    <p class="text-muted mb-8">除了金援，我們也歡迎白米、奶粉、乾貨等民生必需品。請先查看我們的「即時物資需求清單」再行寄送。</p>
+                    <a href="#" class="btn btn-secondary" style="width: 100%;">查看物資清單</a>
+                </div>
+            </div>
+
+            <div id="report" class="reveal"
+                style="background-color: white; padding: 4rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                <div
+                    style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+                    <div>
+                        <h2 class="mb-2">即時捐款徵信</h2>
+                        <p class="text-muted">我們堅持財務透明，所有捐款均會於三個工作日內公告。</p>
+                    </div>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <input type="text" placeholder="搜尋捐款人..."
+                            style="padding: 0.5rem 1rem; border: 1px solid var(--border); border-radius: 0.5rem;">
+                        <button class="btn btn-primary">搜尋</button>
+                    </div>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                        <thead>
+                            <tr style="background: var(--background); text-align: left;">
+                                <th style="padding: 1rem; border-bottom: 2px solid var(--border);">捐款日期</th>
+                                <th style="padding: 1rem; border-bottom: 2px solid var(--border);">捐款人姓名/單位</th>
+                                <th style="padding: 1rem; border-bottom: 2px solid var(--border); text-align: right;">
+                                    金額(NT$)</th>
+                                <th style="padding: 1rem; border-bottom: 2px solid var(--border);">指定用途</th>
+                                <th style="padding: 1rem; border-bottom: 2px solid var(--border);">收據編號</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td colspan="5" style="padding: 4rem; text-align: center; color: #94a3b8;">
+                                    <i data-lucide="database" size="48" style="opacity: 0.3; margin-bottom: 1rem;"></i>
+                                    <p>目前尚無紀錄（網站建立測試示範區）</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
+                    <button class="btn btn-secondary">查詢過往紀錄</button>
+                    <button class="btn btn-secondary" style="background: white;"><i data-lucide="download" size="16"
+                            style="margin-right: 8px; vertical-align: middle;"></i> 年度經費報告</button>
+                </div>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <p class="text-muted" style="font-size: 0.875rem;">
+                    勸募許可字號：衛部救字第 112136xxxx 號<br>
+                    心雲基金會依法將於次年寄發捐款收據（可用於個人所得稅列舉扣除額）。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- (Same footer content) -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo mb-4">
+                        <i data-lucide="heart-handshake"></i> 心雲基金會
+                    </div>
+                    <p class="text-muted">致力於為社會帶來正向改變，關懷弱勢，推廣教育。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>網站地圖</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">關於心雲</a></li>
+                        <li><a href="services.html">服務項目</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="assistance.html">我需要協助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>聯絡資訊</h4>
+                    <ul class="footer-links">
+                        <li><i data-lucide="map-pin" size="16" style="display:inline; margin-right:4px;"></i> 台北市信義區...
+                        </li>
+                        <li><i data-lucide="phone" size="16" style="display:inline; margin-right:4px;"></i> (02)
+                            1234-5678</li>
+                        <li><i data-lucide="mail" size="16" style="display:inline; margin-right:4px;"></i>
+                            info@xinyun.org.tw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>關注我們</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Line"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
+                class="reveal">
+                <div style="max-width: 500px;">
+                    <h4 class="mb-2">訂閱心雲電子報</h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
+                </div>
+                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
+                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
+                    <input type="email" placeholder="您的電子郵件"
+                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
+                        required>
+                    <button type="submit" class="btn btn-primary">訂閱</button>
+                </form>
+            </div>
+            <div class="copyright">
+                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

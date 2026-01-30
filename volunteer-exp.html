@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>志工心得 - 心雲基金會</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Prototype Notice Banner -->
+    <div
+        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="heart-handshake" color="var(--primary)"></i>
+                心雲基金會
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">關於心雲</a></li>
+                <li><a href="services.html" class="nav-link">服務項目</a></li>
+                <li class="dropdown">
+                    <a href="blog.html" class="nav-link dropdown-toggle active">愛心足跡</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="stories.html" class="dropdown-item">服務故事</a></li>
+                        <li><a href="volunteer-exp.html" class="dropdown-item">志工心得</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" class="nav-link">最新消息</a></li>
+                <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
+                <li><a href="assistance.html" class="btn btn-cta">我需要協助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header section text-center parallax-bg"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('images/about.png');">
+        <div class="container reveal">
+            <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">志工心得</h1>
+            <p style="color: white; font-size: 1.2rem; opacity: 0.95; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                給予，是世界上最快樂的收穫</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
+                <!-- Volunteer 1 -->
+                <div class="card reveal" style="padding: 2.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div
+                            style="width: 64px; height: 64px; border-radius: 50%; background: #e0f2fe; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: var(--primary);">
+                            張</div>
+                        <div>
+                            <h4 style="margin: 0;">張小姐</h4>
+                            <p class="text-muted" style="font-size: 0.85rem; margin: 0;">服務資歷：2 年</p>
+                        </div>
+                    </div>
+                    <p class="text-muted" style="line-height: 1.8; font-style: italic;">
+                        「在心雲服務的這兩年，我才真正體會到『施比受更有福』。每次看到長輩們期待我們到訪的眼神，那種被需要的感覺，是我在忙碌職場中得不到的救贖。」</p>
+                    <div style="margin-top: 1.5rem; color: #fbbf24; display: flex; gap: 4px;">
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                    </div>
+                </div>
+
+                <!-- Volunteer 2 -->
+                <div class="card reveal" style="padding: 2.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div
+                            style="width: 64px; height: 64px; border-radius: 50%; background: #fef3c7; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #d97706;">
+                            王</div>
+                        <div>
+                            <h4 style="margin: 0;">王同學</h4>
+                            <p class="text-muted" style="font-size: 0.85rem; margin: 0;">服務資歷：6 個月</p>
+                        </div>
+                    </div>
+                    <p class="text-muted" style="line-height: 1.8; font-style: italic;">
+                        「參與偏鄉數位教學後，原本是我要教孩子們使用電腦，沒想到反而是孩子們對生活的純粹與開朗教會了我。心雲提供的培訓非常完整，讓我在服務過程中也能不斷成長。」</p>
+                    <div style="margin-top: 1.5rem; color: #fbbf24; display: flex; gap: 4px;">
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                    </div>
+                </div>
+
+                <!-- Volunteer 3 -->
+                <div class="card reveal" style="padding: 2.5rem;">
+                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                        <div
+                            style="width: 64px; height: 64px; border-radius: 50%; background: #dcfce7; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #16a34a;">
+                            李</div>
+                        <div>
+                            <h4 style="margin: 0;">李大哥</h4>
+                            <p class="text-muted" style="font-size: 0.85rem; margin: 0;">服務資歷：5 年</p>
+                        </div>
+                    </div>
+                    <p class="text-muted" style="line-height: 1.8; font-style: italic;">
+                        「退休後，心雲成了我的第二個家。這裡的團隊非常專業且透明，讓我確信每一分努力都能真正落在實處。能將自己過去的專業回饋給社會，是人生下半場最棒的事。」</p>
+                    <div style="margin-top: 1.5rem; color: #fbbf24; display: flex; gap: 4px;">
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 6rem; background: var(--primary); color: white; padding: 4rem; border-radius: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;"
+                class="reveal">
+                <div style="max-width: 600px;">
+                    <h2 style="color: white; margin-bottom: 1rem;">也想成為我們的一員嗎？</h2>
+                    <p style="opacity: 0.9;">不論您的年齡、背景或專業，只要擁有一顆熱忱的心，心雲都竭誠歡迎您的加入。我們提供專業的志工培力課程，讓您的善意能轉化為最有效的幫助。</p>
+                </div>
+                <a href="contact.html" class="btn"
+                    style="background: white; color: var(--primary); padding: 1rem 3rem; font-size: 1.1rem;">立即報名志工</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo mb-4">
+                        <i data-lucide="heart-handshake"></i> 心雲基金會
+                    </div>
+                    <p class="text-muted">致力於為社會帶來正向改變，關懷弱勢，推廣教育。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>網站地圖</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">關於心雲</a></li>
+                        <li><a href="services.html">服務項目</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="assistance.html">我需要協助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>聯絡資訊</h4>
+                    <ul class="footer-links">
+                        <li><i data-lucide="map-pin" size="16" style="display:inline; margin-right:4px;"></i> 台北市信義區...
+                        </li>
+                        <li><i data-lucide="phone" size="16" style="display:inline; margin-right:4px;"></i> (02)
+                            1234-5678</li>
+                        <li><i data-lucide="mail" size="16" style="display:inline; margin-right:4px;"></i>
+                            info@xinyun.org.tw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>關注我們</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Line"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
+                class="reveal">
+                <div style="max-width: 500px;">
+                    <h4 class="mb-2">訂閱心雲電子報</h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
+                </div>
+                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
+                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
+                    <input type="email" placeholder="您的電子郵件"
+                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
+                        required>
+                    <button type="submit" class="btn btn-primary">訂閱</button>
+                </form>
+            </div>
+            <div class="copyright">
+                &copy; 2026 心雲基金會. All rights reserved. (網站建立測試示範)
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>服務項目 - 心雲基金會</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Prototype Notice Banner -->
+    <div
+        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="heart-handshake" color="var(--primary)"></i>
+                心雲基金會
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">關於心雲</a></li>
+                <li><a href="services.html" class="nav-link active">服務項目</a></li>
+                <li class="dropdown">
+                    <a href="blog.html" class="nav-link dropdown-toggle">愛心足跡</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="stories.html" class="dropdown-item">服務故事</a></li>
+                        <li><a href="volunteer-exp.html" class="dropdown-item">志工心得</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" class="nav-link">最新消息</a></li>
+                <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
+                <li><a href="assistance.html" class="btn btn-cta">我需要協助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header section text-center parallax-bg"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('images/services.png');">
+        <div class="container reveal">
+            <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">我們的服務</h1>
+            <p style="color: white; font-size: 1.1rem; opacity: 0.95; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">深耕在地，多元服務
+            </p>
+        </div>
+    </header>
+
+    <!-- Navigation Anchors -->
+    <style>
+        .subnav-sticky {
+            background-color: white;
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 73px;
+            z-index: 900;
+            transition: top 0.3s ease-in-out;
+        }
+
+        body.nav-hidden .subnav-sticky {
+            top: 0;
+        }
+    </style>
+    <div class="subnav-sticky">
+        <div class="container">
+            <ul style="display: flex; gap: 2rem; justify-content: center; padding: 1rem 0;">
+                <li><a href="#care" class="nav-link" style="color: var(--primary);"># 弱勢關懷</a></li>
+                <li><a href="#education" class="nav-link" style="color: var(--primary);"># 教育推廣</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <section id="care" class="section">
+        <div class="container">
+            <div style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 310px;" class="reveal">
+                    <img src="images/care_delivery.png" alt="關懷弱勢"
+                        style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%;">
+                </div>
+                <div style="flex: 1; min-width: 310px;" class="reveal">
+                    <div
+                        style="display: inline-block; padding: 0.5rem 1.25rem; background: rgba(8, 145, 178, 0.1); color: var(--primary); border-radius: 2rem; font-weight: 600; font-size: 0.875rem; margin-bottom: 1.5rem;">
+                        CARE & SUPPORT
+                    </div>
+                    <h2 class="mb-4">弱勢關懷與救助</h2>
+                    <p class="text-muted mb-6">我們致力於填平社會的不平等。透過系統化的調查與實地走訪，我們確保每一份資源都能精準送達最需要的角落，給予個案最有溫度的支持。</p>
+
+                    <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                        <div style="display: flex; gap: 1rem;">
+                            <div
+                                style="background: var(--background); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="hand-heart" color="var(--primary)"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">急難救助計畫</h4>
+                                <p class="text-muted" style="font-size: 0.9rem;">
+                                    針對突發事故或重大傷病家庭，提供及時的應急補助金，協助穩定基礎生活，避免陷入極端貧困。</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <div
+                                style="background: var(--background); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <i data-lucide="soup" color="var(--primary)"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">長者送餐與陪伴</h4>
+                                <p class="text-muted" style="font-size: 0.9rem;">
+                                    我們不僅提供每日預約送餐，更有志工定期到府探視，建立長期信任關係，讓孤獨長輩重拾笑容。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="section" style="background-color: #f8fafc;">
+        <div class="container">
+            <div style="display: flex; gap: 4rem; align-items: center; flex-wrap: wrap-reverse;">
+                <div style="flex: 1; min-width: 310px;" class="reveal">
+                    <div
+                        style="display: inline-block; padding: 0.5rem 1.25rem; background: rgba(8, 145, 178, 0.1); color: var(--primary); border-radius: 2rem; font-weight: 600; font-size: 0.875rem; margin-bottom: 1.5rem;">
+                        EDUCATION & GROWTH
+                    </div>
+                    <h2 class="mb-4">教育培力與翻轉</h2>
+                    <p class="text-muted mb-6">知識與技能是翻轉貧窮的唯一槓桿。我們不只提供助學金，更著重於心理建設與職能培力，引導孩子看見生命的無限可能。</p>
+
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
+                        <div class="card" style="background: white; border-radius: var(--radius-lg);">
+                            <h4 class="mb-2">數位平權：偏鄉教學中心</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">
+                                在資源匱乏的邊鄉建立數位教室，提供平板設備與專業線上課程，縮短數位落差，讓孩子接軌現代知識趨勢。</p>
+                        </div>
+                        <div class="card" style="background: white; border-radius: var(--radius-lg);">
+                            <h4 class="mb-2">星雲助學金與職能營隊</h4>
+                            <p class="text-muted" style="font-size: 0.9rem;">
+                                定期發放學雜費補助，並舉辦職業探索營，邀請各行各業專業人士分享經驗，點燃孩子們對未來的夢想火種。</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="flex: 1; min-width: 310px;" class="reveal">
+                    <img src="images/education_mentor.png" alt="教育培力"
+                        style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container text-center reveal">
+            <h2 class="mb-8">我們的影響力指標</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;">
+                <div style="flex: 1; min-width: 180px;">
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
+                        25+</div>
+                    <p class="text-muted">全台常態服務據點</p>
+                </div>
+                <div style="flex: 1; min-width: 180px;">
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
+                        1.5萬</div>
+                    <p class="text-muted">年度受惠總人次</p>
+                </div>
+                <div style="flex: 1; min-width: 180px;">
+                    <div style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
+                        3.2億</div>
+                    <p class="text-muted">十年累積補助總金額(NT$)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Criteria -->
+    <section class="section" style="background-color: white;">
+        <div class="container">
+            <div class="text-center mb-16 reveal">
+                <h2 class="mb-4">補助申請對象與標準</h2>
+                <p class="text-muted">我們確保每一分資源都能精確送達最需要的手中。</p>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                <div class="card reveal">
+                    <h4 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                        急難救助對象</h4>
+                    <ul style="padding-left: 1.25rem; line-height: 2;">
+                        <li>因意外導致生活陷於困境之家庭</li>
+                        <li>患有重大傷病且無力支付醫療費者</li>
+                        <li>因天災導致居住環境受損之災民</li>
+                        <li>無力支付喪葬費用之清寒家庭</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <h4 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                        教育補助對象</h4>
+                    <ul style="padding-left: 1.25rem; line-height: 2;">
+                        <li>設籍偏鄉之國民中小學在學生</li>
+                        <li>持有低收入戶或清寒證明之學子</li>
+                        <li>於體育、藝術有專業表現之弱勢生</li>
+                        <li>家庭突遇變故導致學業中斷者</li>
+                    </ul>
+                </div>
+                <div class="card reveal">
+                    <h4 style="border-bottom: 2px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem;">
+                        長者關懷對象</h4>
+                    <ul style="padding-left: 1.25rem; line-height: 2;">
+                        <li>年滿 65 歲以上之獨居長者</li>
+                        <li>雙老共居且有失能協助需求者</li>
+                        <li>低收或中低收入之弱勢長輩</li>
+                        <li>經政府轉介需居家送餐之個案</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources / Reports Section -->
+    <section class="section" style="background-color: var(--background);">
+        <div class="container">
+            <div
+                style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <div class="reveal mb-8">
+                    <h2 class="mb-4">資訊公開與成效報告</h2>
+                    <p class="text-muted">我們堅持財務透明，定期公布服務成效與審核報告。</p>
+                </div>
+                <div
+                    style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; width: 100%;">
+                    <div class="card reveal"
+                        style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i data-lucide="file-text" color="var(--primary)"></i>
+                            <div>
+                                <h5 style="margin: 0;">2024 年度服務成效年度報表</h5>
+                                <p class="text-muted" style="font-size: 0.85rem; margin: 0;">PDF | 4.2 MB</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem;">下載報告</a>
+                    </div>
+                    <div class="card reveal"
+                        style="display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 2rem;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <i data-lucide="shield-check" color="var(--primary)"></i>
+                            <div>
+                                <h5 style="margin: 0;">2023 下半年財務查核報告書</h5>
+                                <p class="text-muted" style="font-size: 0.85rem; margin: 0;">PDF | 2.8 MB</p>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1rem;">下載報告</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <!-- (Same footer content) -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo mb-4">
+                        <i data-lucide="heart-handshake"></i> 心雲基金會
+                    </div>
+                    <p class="text-muted">致力於為社會帶來正向改變，關懷弱勢，推廣教育。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>網站地圖</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">關於心雲</a></li>
+                        <li><a href="services.html">服務項目</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="assistance.html">我需要協助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>聯絡資訊</h4>
+                    <ul class="footer-links">
+                        <li><i data-lucide="map-pin" size="16" style="display:inline; margin-right:4px;"></i>
+                            台北市信義區...
+                        </li>
+                        <li><i data-lucide="phone" size="16" style="display:inline; margin-right:4px;"></i> (02)
+                            1234-5678</li>
+                        <li><i data-lucide="mail" size="16" style="display:inline; margin-right:4px;"></i>
+                            info@xinyun.org.tw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>關注我們</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Line"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
+                class="reveal">
+                <div style="max-width: 500px;">
+                    <h4 class="mb-2">訂閱心雲電子報</h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
+                </div>
+                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
+                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
+                    <input type="email" placeholder="您的電子郵件"
+                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
+                        required>
+                    <button type="submit" class="btn btn-primary">訂閱</button>
+                </form>
+            </div>
+            <div class="copyright">
+                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>愛心足跡 - 心雲基金會</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Prototype Notice Banner -->
+    <div
+        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="heart-handshake" color="var(--primary)"></i>
+                心雲基金會
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">關於心雲</a></li>
+                <li><a href="services.html" class="nav-link">服務項目</a></li>
+                <li class="dropdown">
+                    <a href="blog.html" class="nav-link active dropdown-toggle">愛心足跡</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="stories.html" class="dropdown-item">服務故事</a></li>
+                        <li><a href="volunteer-exp.html" class="dropdown-item">志工心得</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" class="nav-link">最新消息</a></li>
+                <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
+                <li><a href="assistance.html" class="btn btn-cta">我需要協助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header section text-center parallax-bg"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('images/blog.png');">
+        <div class="container reveal">
+            <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">愛心足跡</h1>
+            <p style="color: white; font-size: 1.1rem; opacity: 0.95; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                記錄每一個感動的瞬間，分享每一份愛的溫度</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 4rem;">
+
+                <!-- Main Content: Blog List -->
+                <div class="blog-list">
+                    <!-- Article 1 -->
+                    <article class="card reveal reveal-delay-100"
+                        style="padding: 0; margin-bottom: 3rem; overflow: hidden;">
+                        <img src="images/blog.png" alt="Education story"
+                            style="border-radius: var(--radius-lg) var(--radius-lg) 0 0; height: 400px; object-fit: cover; width: 100%;">
+                        <div style="padding: 2.5rem;">
+                            <div style="display: flex; gap: 1.5rem; margin-bottom: 1rem; align-items: center;">
+                                <span
+                                    style="padding: 0.25rem 0.75rem; background: rgba(8, 145, 178, 0.1); color: var(--primary); border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;">服務故事</span>
+                                <span class="text-muted" style="font-size: 0.9rem;"><i data-lucide="calendar" size="14"
+                                        style="vertical-align: middle; margin-right: 4px;"></i> 2026/03/10</span>
+                                <span class="text-muted" style="font-size: 0.9rem;"><i data-lucide="user" size="14"
+                                        style="vertical-align: middle; margin-right: 4px;"></i> 撰文：社工小李</span>
+                            </div>
+                            <h2 class="mb-4" style="font-size: 2rem;"><a href="#"
+                                    style="color: var(--text); transition: color 0.2s;">從偏鄉到都市：小明的求學夢</a></h2>
+                            <p class="text-muted mb-6" style="line-height: 1.8; font-size: 1.1rem;">
+                                住在偏遠山區的小明，從小就對科學充滿好奇，但資源的匱乏讓他難以接觸到更廣闊的知識世界。直到心雲基金會的「科學下鄉計畫」來到他的學校，那一刻，他眼底閃爍的光芒，讓我們知道一切努力都是值得的...
+                            </p>
+                            <a href="#" class="btn btn-primary">閱讀全文 <i data-lucide="arrow-right" size="18"
+                                    style="vertical-align: middle; margin-left: 8px;"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="card reveal reveal-delay-200"
+                        style="padding: 0; margin-bottom: 3rem; overflow: hidden;">
+                        <img src="images/about_team.png" alt="Volunteer story"
+                            style="border-radius: var(--radius-lg) var(--radius-lg) 0 0; height: 400px; object-fit: cover; width: 100%;">
+                        <div style="padding: 2.5rem;">
+                            <div style="display: flex; gap: 1.5rem; margin-bottom: 1rem; align-items: center;">
+                                <span
+                                    style="padding: 0.25rem 0.75rem; background: rgba(8, 145, 178, 0.1); color: var(--primary); border-radius: 0.5rem; font-size: 0.875rem; font-weight: 600;">志工心得</span>
+                                <span class="text-muted" style="font-size: 0.9rem;"><i data-lucide="calendar" size="14"
+                                        style="vertical-align: middle; margin-right: 4px;"></i> 2026/02/28</span>
+                                <span class="text-muted" style="font-size: 0.9rem;"><i data-lucide="user" size="14"
+                                        style="vertical-align: middle; margin-right: 4px;"></i> 撰文：志工阿祥</span>
+                            </div>
+                            <h2 class="mb-4" style="font-size: 2rem;"><a href="#"
+                                    style="color: var(--text); transition: color 0.2s;">我在日間照顧中心的 100 個日子</a></h2>
+                            <p class="text-muted mb-6" style="line-height: 1.8; font-size: 1.1rem;">
+                                這是我第一次擔任長期志工，起初只是想打發時間，沒想到卻在這裡遇見了一群可愛的長輩，他們的人生智慧深深啟發了我。這100天，與其說是服務，不如說是我被治癒的過程...</p>
+                            <a href="#" class="btn btn-primary">閱讀全文 <i data-lucide="arrow-right" size="18"
+                                    style="vertical-align: middle; margin-left: 8px;"></i></a>
+                        </div>
+                    </article>
+
+                    <!-- Pagination -->
+                    <div style="display: flex; gap: 1rem; justify-content: center; margin-top: 3rem;">
+                        <a href="#" class="btn btn-secondary disabled"
+                            style="opacity: 0.5; cursor: not-allowed;">上一頁</a>
+                        <a href="#" class="btn btn-primary">1</a>
+                        <a href="#" class="btn btn-secondary">2</a>
+                        <a href="#" class="btn btn-secondary">3</a>
+                        <a href="#" class="btn btn-secondary">下一頁</a>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <!-- Categories -->
+                    <div class="blog-sidebar-widget reveal reveal-delay-100">
+                        <h3 class="mb-4">文章分類</h3>
+                        <ul class="blog-category-list">
+                            <li><a href="#">全部文章 <span class="bg-badge">24</span></a></li>
+                            <li><a href="#">服務故事 <span class="bg-badge">15</span></a></li>
+                            <li><a href="#">志工心得 <span class="bg-badge">6</span></a></li>
+                            <li><a href="#">活動花絮 <span class="bg-badge">3</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Popular Posts -->
+                    <div class="blog-sidebar-widget reveal reveal-delay-200">
+                        <h3 class="mb-4">熱門閱讀</h3>
+                        <ul style="display: flex; flex-direction: column; gap: 1rem;">
+                            <li>
+                                <a href="#" style="display: block;">
+                                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">讓愛不間斷：防疫期間的送餐服務</h4>
+                                    <span class="text-muted" style="font-size: 0.875rem;">2025/06/15</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" style="display: block;">
+                                    <h4 style="font-size: 1rem; margin-bottom: 0.25rem;">小小志工的一天</h4>
+                                    <span class="text-muted" style="font-size: 0.875rem;">2025/09/20</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="blog-sidebar-widget reveal reveal-delay-300"
+                        style="background-color: var(--primary); color: white;">
+                        <h3 class="mb-2" style="color: white;">訂閱電子報</h3>
+                        <p class="mb-4" style="opacity: 0.9;">不錯過任何感動時刻</p>
+                        <form onsubmit="event.preventDefault(); alert('訂閱成功！');">
+                            <input type="email" placeholder="您的 Email"
+                                style="width: 100%; padding: 0.75rem; border-radius: var(--radius); border: none; margin-bottom: 1rem;">
+                            <button type="submit" class="btn"
+                                style="width: 100%; background-color: var(--cta); color: white;">立即訂閱</button>
+                        </form>
+                    </div>
+                </aside>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo mb-4">
+                        <i data-lucide="heart-handshake"></i> 心雲基金會
+                    </div>
+                    <p class="text-muted">致力於為社會帶來正向改變，關懷弱勢，推廣教育。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>網站地圖</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">關於心雲</a></li>
+                        <li><a href="services.html">服務項目</a></li>
+                        <li><a href="blog.html">愛心足跡</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="assistance.html">我需要協助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>聯絡資訊</h4>
+                    <ul class="footer-links">
+                        <li><i data-lucide="map-pin" size="16" style="display:inline; margin-right:4px;"></i> 台北市信義區...
+                        </li>
+                        <li><i data-lucide="phone" size="16" style="display:inline; margin-right:4px;"></i> (02)
+                            1234-5678</li>
+                        <li><i data-lucide="mail" size="16" style="display:inline; margin-right:4px;"></i>
+                            info@xinyun.org.tw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>關注我們</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Line"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
+                class="reveal">
+                <div style="max-width: 500px;">
+                    <h4 class="mb-2">訂閱心雲電子報</h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
+                </div>
+                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
+                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
+                    <input type="email" placeholder="您的電子郵件"
+                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
+                        required>
+                    <button type="submit" class="btn btn-primary">訂閱</button>
+                </form>
+            </div>
+            <div class="copyright">
+                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>最新消息 - 心雲基金會</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <!-- Prototype Notice Banner -->
+    <div
+        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i data-lucide="heart-handshake" color="var(--primary)"></i>
+                心雲基金會
+            </a>
+            <button class="mobile-toggle" aria-label="Toggle navigation">
+                <i data-lucide="menu"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="about.html" class="nav-link">關於心雲</a></li>
+                <li><a href="services.html" class="nav-link">服務項目</a></li>
+                <li class="dropdown">
+                    <a href="blog.html" class="nav-link dropdown-toggle">愛心足跡</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="stories.html" class="dropdown-item">服務故事</a></li>
+                        <li><a href="volunteer-exp.html" class="dropdown-item">志工心得</a></li>
+                    </ul>
+                </li>
+                <li><a href="news.html" class="nav-link active">最新消息</a></li>
+                <li><a href="contact.html" class="nav-link">聯絡我們</a></li>
+                <li><a href="assistance.html" class="btn btn-cta">我需要協助</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header section text-center parallax-bg"
+        style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('images/news.png');">
+        <div class="container reveal">
+            <h1 style="color: white; text-shadow: 0 2px 8px rgba(0,0,0,0.3);">最新消息</h1>
+            <p style="color: white; font-size: 1.1rem; opacity: 0.95; text-shadow: 0 1px 4px rgba(0,0,0,0.5);">
+                活動快訊與服務成果分享</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="mb-16 reveal">活動快訊</h2>
+            <div id="dynamicNewsGrid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <!-- 動態注入內容 -->
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let newsData = [];
+            try {
+                newsData = JSON.parse(localStorage.getItem('xinyun_news_data')) || [];
+            } catch (e) { console.error(e); }
+
+            // Fallback data
+            if (newsData.length === 0) {
+                newsData = [
+                    { date: '2026/02/15', title: '「愛在心雲」慈善義賣會', category: '活動快訊', summary: '誠摯邀請您參與我們的年度慈善義賣，所得將全數撥入「清寒學生助學基金」，幫助貧困學子安心就學。現場將有愛心攤位、手工藝品義賣與精彩表演...' },
+                    { date: '2026/03/01', title: '偏鄉數位教學與陪伴志工招募', category: '服務成果', summary: '我們正在招募具備數位專長或熱愛教學的志工，透過遠端系統陪伴孩童成長。不只需技術指導，更需要您的耐心傾聽與陪伴...' },
+                    { date: '2026/03/20', title: '【專題講座】高齡社會下如何實踐在地安老', category: '活動快訊', summary: '邀請資深社工師與醫學專家分享，探討現階段獨居長者的照護困局與解決方案，並分享社區互助網的成功案例...' },
+                    { date: '2026/04/10', title: '心雲春季淨灘活動', category: '活動快訊', summary: '讓我們一起守護美麗的海岸線，為地球盡一份心力。歡迎全家大小一同參與，體驗環境教育的重要性...' }
+                ];
+            }
+
+            const container = document.getElementById('dynamicNewsGrid');
+
+            if (newsData.length > 0) {
+                container.innerHTML = newsData.map((item, index) => `
+                    <article class="card reveal active" style="transition-delay: ${index * 100}ms;">
+                        <div style="background-color: var(--primary); color: white; padding: 0.5rem 1rem; border-radius: var(--radius-sm); font-weight: 500; display: inline-block; margin-bottom: 1rem; font-size: 0.85rem;">
+                            ${item.date}
+                        </div>
+                        <h3 class="mb-2" style="font-size: 1.25rem; cursor:pointer;" onclick="showPublicDetail(${index})">${item.title}</h3>
+                        <p class="text-muted mb-4">${item.summary}</p>
+                        <button onclick="showPublicDetail(${index})" class="btn btn-secondary" style="font-size: 0.85rem;">閱讀詳情</button>
+                    </article>
+                `).join('');
+                // 重新初始化動畫與圖示
+                if (window.lucide) lucide.createIcons();
+            }
+        });
+
+        function showPublicDetail(index) {
+            const newsData = JSON.parse(localStorage.getItem('xinyun_news_data')) || [
+                { date: '2026/02/15', title: '「愛在心雲」慈善義賣會', category: '活動快訊', content: '誠摯邀請您參與我們的年度慈善義賣，所得將全數撥入「清寒學生助學基金」，幫助貧困學子安心就學。現場將有愛心攤位、手工藝品義賣與精彩表演。' },
+                { date: '2026/03/01', title: '偏鄉數位教學與陪伴志工招募', category: '服務成果', content: '我們正在招募具備數位專長或熱愛教學的志工，透過遠端系統陪伴孩童成長。不只需技術指導，更需要您的耐心傾聽與陪伴。' }
+            ];
+            const item = newsData[index];
+            if (!item) return;
+
+            document.getElementById('publicModalTitle').textContent = item.title;
+            document.getElementById('publicModalMeta').textContent = `${item.date} | ${item.category}`;
+            document.getElementById('publicModalContent').textContent = item.content || item.summary;
+
+            document.getElementById('publicDetailModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function closePublicModal() {
+            document.getElementById('publicDetailModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    </script>
+
+    <section class="section" style="background-color: #f8fafc;">
+        <div class="container">
+            <h2 class="mb-8 reveal">服務成果與專題</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem;">
+                <!-- Result Item 1 -->
+                <article class="card reveal reveal-delay-100"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="images/home.png" alt="Children smiling"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            onmouseover="this.style.transform='scale(1.1)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+                        <div
+                            style="color: var(--primary); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem;">
+                            專題報導 | 偏鄉教育</div>
+                        <h3 class="mb-3" style="font-size: 1.25rem;">2025 寒冬送暖：讓愛零距離</h3>
+                        <p class="text-muted mb-6" style="font-size: 0.95rem; line-height: 1.6;">感謝超過 1,200
+                            位善心人士的參與，我們在寒流期間成功配送了 500 份保暖物資包，覆蓋全台 12 個偏遠山區村落。</p>
+                        <div style="margin-top: auto;">
+                            <a href="#" class="text-primary"
+                                style="font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                閱讀詳情 <i data-lucide="arrow-right" size="16"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Result Item 2 -->
+                <article class="card reveal reveal-delay-200"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="images/services.png" alt="Volunteers in park"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            onmouseover="this.style.transform='scale(1.1)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+                        <div
+                            style="color: var(--primary); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem;">
+                            活動回顧 | 社區服務</div>
+                        <h3 class="mb-3" style="font-size: 1.25rem;">心雲青年志工團：社區清潔日成果</h3>
+                        <p class="text-muted mb-6" style="font-size: 0.95rem; line-height: 1.6;">上週末 150
+                            位青年志工齊聚大安森林公園，不僅協助維護環境，更舉辦了環保教育小學堂，吸引超過 300 位民眾參與。</p>
+                        <div style="margin-top: auto;">
+                            <a href="#" class="text-primary"
+                                style="font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                閱讀詳情 <i data-lucide="arrow-right" size="16"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Result Item 3 -->
+                <article class="card reveal reveal-delay-300"
+                    style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+                    <div style="height: 240px; overflow: hidden;">
+                        <img src="images/education_mentor.png" alt="Teaching class"
+                            style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s;"
+                            onmouseover="this.style.transform='scale(1.1)'"
+                            onmouseout="this.style.transform='scale(1)'">
+                    </div>
+                    <div style="padding: 2rem; flex: 1; display: flex; flex-direction: column;">
+                        <div
+                            style="color: var(--primary); font-size: 0.875rem; font-weight: 600; margin-bottom: 0.75rem;">
+                            年度結案 | 學習翻轉</div>
+                        <h3 class="mb-3" style="font-size: 1.25rem;">閱讀夢想計畫：讓知識的力量落地</h3>
+                        <p class="text-muted mb-6" style="font-size: 0.95rem; line-height: 1.6;">
+                            在為期一年的數位陪伴計畫中，受助學生的平均學科興趣提升了 40%，偏鄉小學圖書館借閱率更是成長了兩倍。</p>
+                        <div style="margin-top: auto;">
+                            <a href="#" class="text-primary"
+                                style="font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;">
+                                閱讀詳情 <i data-lucide="arrow-right" size="16"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div style="margin-top: 4rem; text-align: center;">
+                <button class="btn btn-secondary" style="border-radius: 2rem;">查看更多歷史消息</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <!-- (Same footer content) -->
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo mb-4">
+                        <i data-lucide="heart-handshake"></i> 心雲基金會
+                    </div>
+                    <p class="text-muted">致力於為社會帶來正向改變，關懷弱勢，推廣教育。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>網站地圖</h4>
+                    <ul class="footer-links">
+                        <li><a href="about.html">關於心雲</a></li>
+                        <li><a href="services.html">服務項目</a></li>
+                        <li><a href="news.html">最新消息</a></li>
+                        <li><a href="assistance.html">我需要協助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>聯絡資訊</h4>
+                    <ul class="footer-links">
+                        <li><i data-lucide="map-pin" size="16" style="display:inline; margin-right:4px;"></i> 台北市信義區...
+                        </li>
+                        <li><i data-lucide="phone" size="16" style="display:inline; margin-right:4px;"></i> (02)
+                            1234-5678</li>
+                        <li><i data-lucide="mail" size="16" style="display:inline; margin-right:4px;"></i>
+                            info@xinyun.org.tw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>關注我們</h4>
+                    <div style="display: flex; gap: 1rem;">
+                        <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+                        <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+                        <a href="#" aria-label="Line"><i data-lucide="message-circle"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
+                class="reveal">
+                <div style="max-width: 500px;">
+                    <h4 class="mb-2">訂閱心雲電子報</h4>
+                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
+                </div>
+                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
+                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
+                    <input type="email" placeholder="您的電子郵件"
+                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
+                        required>
+                    <button type="submit" class="btn btn-primary">訂閱</button>
+                </form>
+            </div>
+            <div class="copyright">
+                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Public Detail View Modal -->
+    <div id="publicDetailModal"
+        style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 2000; backdrop-filter: blur(4px);">
+        <div
+            style="background: white; max-width: 700px; width: 90%; max-height: 85vh; overflow-y: auto; position: relative; padding: 3rem; border-radius: 1rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);">
+            <button onclick="closePublicModal()"
+                style="position: absolute; right: 1.5rem; top: 1.5rem; background: #f1f5f9; border: none; cursor: pointer; color: var(--text-muted); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                <i data-lucide="x" size="20"></i>
+            </button>
+            <h2 id="publicModalTitle" style="color: var(--primary); margin-bottom: 1rem; line-height: 1.4;"></h2>
+            <div id="publicModalMeta"
+                style="margin-bottom: 2rem; font-size: 0.95rem; color: #64748b; font-weight: 500; border-bottom: 1px solid #f1f5f9; padding-bottom: 1rem;">
+            </div>
+            <div id="publicModalContent"
+                style="white-space: pre-wrap; line-height: 2; color: var(--text); font-size: 1.1rem; letter-spacing: 0.02em;">
+            </div>
+            <div style="margin-top: 3rem; text-align: center;">
+                <button onclick="closePublicModal()" class="btn btn-primary"
+                    style="padding: 0.75rem 2rem;">關閉視窗</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
