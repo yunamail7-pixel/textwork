@@ -277,7 +277,52 @@
             .desktop-only {
                 display: none !important;
             }
+
+            .table-responsive table {
+                min-width: 850px;
+                /* 強制橫向捲動 */
+            }
+
+            .content-card {
+                padding: 1.25rem !important;
+                /* 減少卡片內距 */
+            }
         }
+
+        /* Prevent text squashing in table */
+        table td,
+        table th {
+            white-space: normal;
+            word-break: break-word;
+        }
+
+        .table-responsive td:not(.desktop-only) {
+            min-width: 120px;
+        }
+
+        /* Fixed widths for specific columns to prevent squashing */
+        .table-responsive th:nth-child(1),
+        .table-responsive td:nth-child(1) {
+            width: 110px;
+            min-width: 110px;
+        }
+
+        /* Date/Location */
+
+        .table-responsive th:nth-child(2),
+        .table-responsive td:nth-child(2) {
+            min-width: 250px;
+        }
+
+        /* Title */
+
+        .table-responsive th:nth-child(3),
+        .table-responsive td:nth-child(3) {
+            width: 100px;
+            min-width: 100px;
+        }
+
+        /* Category */
     </style>
 </head>
 
