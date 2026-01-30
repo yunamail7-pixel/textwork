@@ -36,24 +36,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Mobile Dropdown Toggle
+    // Mobile Dropdown Toggle (Enhanced Logic)
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
         const toggle = dropdown.querySelector('.dropdown-toggle');
-        if (toggle) {
-            toggle.addEventListener('click', (e) => {
-                if (window.innerWidth <= 768) {
-                    const rect = toggle.getBoundingClientRect();
-                    const clickX = e.clientX - rect.left;
+        if (toggle && window.innerWidth <= 768) {
+            // 注入專屬 Chevron 開關 (如果還沒有的話)
+            if (!dropdown.querySelector('.dropdown-chevron')) {
+                const chevron = document.createElement('div');
+                chevron.className = 'dropdown-chevron';
+                chevron.innerHTML = '<i data-lucide="chevron-down" size="20"></i>';
+                toggle.appendChild(chevron);
+                if (window.lucide) lucide.createIcons();
 
-                    // 如果點擊是在右側指示器區域（預留 40px），則切換選單而不跳轉
-                    if (clickX > rect.width - 60) {
-                        e.preventDefault();
-                        dropdown.classList.toggle('active');
-                    }
-                    // 否則點擊文字區域，執行默認跳轉動作
-                }
-            });
+                // 點擊 Chevron 時僅切換選單
+                chevron.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                });
+            }
         }
     });
 
