@@ -507,8 +507,10 @@ select:focus {
 
     .navbar {
         padding: 0.6rem 0 !important;
-        backdrop-filter: blur(12px);
-        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: none !important;
+        /* 手機版關閉導覽列模糊防止干擾選單 */
+        -webkit-backdrop-filter: none !important;
+        background-color: var(--surface) !important;
     }
 
     .section {
@@ -536,17 +538,22 @@ select:focus {
         height: 100vh;
         /* 改為 100vh */
         background-color: var(--surface);
+        /* 確保為實體顏色，不模糊 */
         flex-direction: column;
         padding: 6rem 2rem 2rem;
         /* 增加邊距 */
         transform: translateX(100%);
         transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         box-shadow: none;
-        z-index: 2000;
+        z-index: 2100;
+        /* 高於 overlay */
         gap: 0;
         align-items: stretch;
         /* 改為 stretch 確保子元素撐滿 */
         overflow-y: auto;
+        backdrop-filter: none !important;
+        /* 強制關閉模糊 */
+        -webkit-backdrop-filter: none !important;
     }
 
     .nav-menu.active {
@@ -618,6 +625,9 @@ select:focus {
     .nav-overlay.active {
         opacity: 1;
         visibility: visible;
+        /* 僅在背景層應用模糊 */
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
     }
 
     /* Section adjustments for mobile */
