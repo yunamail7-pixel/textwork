@@ -96,7 +96,7 @@ function renderNews() {
             <td>${escapeHtml(item.date)}</td>
             <td style="font-weight:600;">${escapeHtml(item.title)}</td>
             <td><span class="badge">${escapeHtml(item.category)}</span></td>
-            <td class="text-muted" style="font-size:0.85rem;">${escapeHtml(item.summary.substring(0, 30))}...</td>
+            <td class="text-muted desktop-only" style="font-size:0.85rem;">${escapeHtml(item.summary.substring(0, 30))}...</td>
             <td>
                 <div style="display: flex; gap: 0.5rem;">
                     <button class="action-btn" onclick="showDetail('NEWS', ${item.id})" title="預覽詳情" style="color: var(--primary);"><i data-lucide="eye" size="18"></i></button>
@@ -131,7 +131,7 @@ function renderStories() {
             <td>${escapeHtml(item.location)}</td>
             <td><span class="badge">${escapeHtml(item.category)}</span></td>
             <td style="font-weight:600;">${escapeHtml(item.title)}</td>
-            <td class="text-muted" style="font-size:0.85rem;">${escapeHtml(item.summary.substring(0, 30))}...</td>
+            <td class="text-muted desktop-only" style="font-size:0.85rem;">${escapeHtml(item.summary.substring(0, 30))}...</td>
             <td>
                 <div style="display: flex; gap: 0.5rem;">
                     <button class="action-btn" onclick="showDetail('STORIES', ${item.id})" title="預覽詳情" style="color: var(--primary);"><i data-lucide="eye" size="18"></i></button>

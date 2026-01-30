@@ -89,7 +89,8 @@
             .sidebar {
                 transform: translateX(-100%);
                 transition: transform 0.3s ease-in-out;
-                z-index: 1000;
+                z-index: 5000;
+                /* 提升層級避免衝突 */
             }
 
             .sidebar.active {
@@ -98,22 +99,23 @@
 
             .main-content {
                 margin-left: 0;
-                padding: 1.5rem;
+                padding: 1rem;
+                /* 縮減內距 */
                 padding-top: 5rem;
-                /* Space for mobile header */
             }
 
             .mobile-header {
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-                padding: 1rem 1.5rem;
+                padding: 1rem 1.25rem;
                 background: white;
                 position: fixed;
                 top: 0;
                 left: 0;
                 right: 0;
-                z-index: 900;
+                z-index: 4000;
+                /* 高於背景 */
                 border-bottom: 1px solid var(--border);
                 box-shadow: var(--shadow-sm);
             }
@@ -126,11 +128,36 @@
                 right: 0;
                 bottom: 0;
                 background: rgba(0, 0, 0, 0.5);
-                z-index: 950;
+                z-index: 4500;
+                /* 介於 header 與 sidebar 之間 */
             }
 
             .overlay.active {
                 display: block;
+            }
+
+            /* Responsive Table Container */
+            .table-responsive {
+                width: 100%;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+                margin-top: 1rem;
+                border-radius: var(--radius);
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1rem !important;
+            }
+
+            .page-header {
+                flex-direction: column;
+                align-items: flex-start !important;
+                gap: 1rem;
+            }
+
+            .page-header .btn {
+                width: 100%;
             }
         }
 
@@ -208,13 +235,15 @@
         }
 
         .action-btn {
-            padding: 0.5rem;
-            border-radius: 0.4rem;
+            padding: 0.75rem;
+            /* 增加點擊範圍 */
+            border-radius: 0.5rem;
             cursor: pointer;
-            border: none;
-            background: none;
+            border: 1px solid transparent;
+            background: #f8fafc;
+            /* 加入微背景導引 */
             color: var(--text-muted);
-            transition: color 0.2s;
+            transition: all 0.2s;
         }
 
         .action-btn:hover {
@@ -241,6 +270,13 @@
 
         .admin-section.active {
             display: block;
+        }
+
+        /* Responsive Utilities */
+        @media (max-width: 992px) {
+            .desktop-only {
+                display: none !important;
+            }
         }
     </style>
 </head>
@@ -339,20 +375,22 @@
             </div>
 
             <div class="content-card">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>日期</th>
-                            <th>標題</th>
-                            <th>分類</th>
-                            <th>縮略內容</th>
-                            <th style="width: 100px;">操作</th>
-                        </tr>
-                    </thead>
-                    <tbody id="newsTableBody">
-                        <!-- 動態內容點 -->
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>日期</th>
+                                <th>標題</th>
+                                <th>分類</th>
+                                <th class="desktop-only text-muted" style="width: 200px;">縮略內容</th>
+                                <th style="width: 100px;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="newsTableBody">
+                            <!-- 動態內容點 -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
@@ -406,36 +444,41 @@
             </div>
 
             <div class="content-card">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>地點</th>
-                            <th>分類</th>
-                            <th>故事標題</th>
-                            <th>摘要</th>
-                            <th style="width: 100px;">操作</th>
-                        </tr>
-                    </thead>
-                    <tbody id="storiesTableBody">
-                        <!-- 動態內容點 -->
-                    </tbody>
-                </table>
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>地點</th>
+                                <th>分類</th>
+                                <th>故事標題</th>
+                                <th class="desktop-only text-muted" style="width: 200px;">摘要</th>
+                                <th style="width: 100px;">操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id="storiesTableBody">
+                            <!-- 動態內容點 -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </main>
 
     <!-- Detail View Modal -->
     <div id="detailModal" class="overlay"
-        style="display: none; align-items: center; justify-content: center; z-index: 2000;">
+        style="display: none; align-items: center; justify-content: center; z-index: 6000;">
         <div class="content-card"
-            style="max-width: 600px; width: 90%; max-height: 80vh; overflow-y: auto; position: relative;">
+            style="max-width: 650px; width: 92%; max-height: 85vh; overflow-y: auto; position: relative; padding: 2rem;">
             <button onclick="closeDetailModal()"
-                style="position: absolute; right: 1rem; top: 1rem; background: none; border: none; cursor: pointer; color: var(--text-muted);">
-                <i data-lucide="x" size="24"></i>
+                style="position: absolute; right: 1rem; top: 1rem; background: #f1f5f9; border: none; cursor: pointer; color: var(--text-muted); padding: 0.5rem; border-radius: 50%; display: flex;">
+                <i data-lucide="x" size="20"></i>
             </button>
-            <h3 id="modalTitle" class="mb-4" style="padding-right: 2rem;"></h3>
-            <div id="modalMeta" style="margin-bottom: 1.5rem; font-size: 0.9rem; color: var(--primary);"></div>
-            <div id="modalContent" style="white-space: pre-wrap; line-height: 1.8; color: var(--text);"></div>
+            <h3 id="modalTitle" class="mb-4" style="padding-right: 2.5rem; font-size: 1.25rem;"></h3>
+            <div id="modalMeta"
+                style="margin-bottom: 1rem; font-size: 0.85rem; color: var(--primary); font-weight: 600;"></div>
+            <div id="modalContent"
+                style="white-space: pre-wrap; line-height: 1.7; color: var(--text); font-size: 0.95rem; border-top: 1px solid var(--border); padding-top: 1rem;">
+            </div>
         </div>
     </div>
 
