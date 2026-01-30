@@ -43,8 +43,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (toggle) {
             toggle.addEventListener('click', (e) => {
                 if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    dropdown.classList.toggle('active');
+                    const rect = toggle.getBoundingClientRect();
+                    const clickX = e.clientX - rect.left;
+
+                    // 如果點擊是在右側指示器區域（預留 40px），則切換選單而不跳轉
+                    if (clickX > rect.width - 60) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    }
+                    // 否則點擊文字區域，執行默認跳轉動作
                 }
             });
         }

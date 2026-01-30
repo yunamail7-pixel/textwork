@@ -566,6 +566,33 @@ select:focus {
         font-size: 1.1rem;
     }
 
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-right: 0.5rem;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+        background-color: rgba(8, 145, 178, 0.04) !important;
+        padding-left: 1rem !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        position: static !important;
+        margin: 0 !important;
+    }
+
+    .dropdown-item {
+        padding: 1rem !important;
+        border-bottom: 1px solid rgba(8, 145, 178, 0.03);
+    }
+
     /* Mobile Overlay */
     .nav-overlay {
         position: fixed;
@@ -659,6 +686,12 @@ select:focus {
     .prototype-notice .container {
         flex-direction: column;
         gap: 0.5rem !important;
+    }
+
+    /* 降低控制項與導覽列衝突 */
+    .nav-controls {
+        position: relative;
+        z-index: 1900;
     }
 
     /* Adjust grids for mobile */
