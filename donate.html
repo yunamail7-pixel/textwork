@@ -15,14 +15,6 @@
 </head>
 
 <body>
-    <!-- Prototype Notice Banner -->
-    <div
-        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
-        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
-            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
-        </div>
-    </div>
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -74,46 +66,54 @@
             <div
                 style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 5rem;">
                 <!-- Method 1 -->
-                <div class="card text-center reveal"
-                    style="padding: 3rem 2rem; border-bottom: 4px solid var(--primary);">
+                <div class="card glass-panel text-center reveal"
+                    style="padding: 3.5rem 2.5rem; border: none; box-shadow: var(--shadow-lg);">
                     <div
-                        style="background: rgba(8, 145, 178, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                        <i data-lucide="credit-card" size="40" color="var(--primary)"></i>
+                        style="background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(8, 145, 178, 0.05) 100%); width: 90px; height: 90px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; transform: rotate(-5deg);">
+                        <i data-lucide="credit-card" size="44" color="var(--primary)"></i>
                     </div>
-                    <h3>線上刷卡</h3>
-                    <p class="text-muted mb-8">支援各家銀行信用卡，您可以選擇「單次捐款」或「定期定額」支持。穩定支持能讓我們的服務更精準計畫。</p>
-                    <a href="#" class="btn btn-primary" style="width: 100%;">立即線上捐款</a>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">線上刷卡</h3>
+                    <p class="text-muted mb-8" style="font-size: 0.95rem; line-height: 1.6;">
+                        支援各家銀行信用卡，您可以選擇「單次捐款」或「定期定額」支持。穩定支持能讓我們的服務更精準計畫。</p>
+                    <a href="#" class="btn btn-primary"
+                        style="width: 100%; border-radius: 12px; padding: 1rem;">立即線上捐款</a>
                 </div>
 
                 <!-- Method 2 -->
-                <div class="card text-center reveal"
-                    style="padding: 3rem 2rem; border-bottom: 4px solid var(--primary);">
+                <div class="card glass-panel text-center reveal"
+                    style="padding: 3.5rem 2.5rem; border: none; box-shadow: var(--shadow-lg);">
                     <div
-                        style="background: rgba(8, 145, 178, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                        <i data-lucide="landmark" size="40" color="var(--primary)"></i>
+                        style="background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(8, 145, 178, 0.05) 100%); width: 90px; height: 90px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; transform: rotate(5deg);">
+                        <i data-lucide="landmark" size="44" color="var(--primary)"></i>
                     </div>
-                    <h3>銀行/ATM 轉帳</h3>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">銀行/ATM 轉帳</h3>
                     <div class="text-muted mb-6"
-                        style="text-align: left; background: var(--background); padding: 1.5rem; border-radius: 1rem; font-size: 0.95rem;">
-                        <p style="margin-bottom: 0.5rem;"><strong>銀行：</strong>OO 銀行 (000)</p>
-                        <p style="margin-bottom: 0.5rem;"><strong>分行：</strong>XXXX 分行</p>
-                        <p style="margin-bottom: 0.5rem;"><strong>戶名：</strong>財團法人心雲基金會 (測試用)</p>
-                        <p><strong>帳號：</strong>0000-0000-00000</p>
+                        style="text-align: left; background: rgba(8, 145, 178, 0.03); padding: 1.5rem; border-radius: 1rem; font-size: 0.9rem; border: 1px dashed var(--border);">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span
+                                style="font-weight: 700;">銀行代碼</span><span>OO 銀行 (000)</span></div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;"><span
+                                style="font-weight: 700;">戶名</span><span>財團法人心雲基金會</span></div>
+                        <div style="display: flex; justify-content: space-between;"><span
+                                style="font-weight: 700;">帳號</span><span
+                                style="letter-spacing: 1px; color: var(--text);">0000-0000-00000</span></div>
                     </div>
-                    <p style="font-size: 0.85rem; color: #ef4444;">*轉帳後請於「聯絡我們」填寫格式或來信告知。</p>
+                    <p style="font-size: 0.8rem; color: #ef4444; font-weight: 600;">* 轉帳後請來信告知後五碼</p>
                 </div>
 
                 <!-- Method 3 -->
-                <div class="card text-center reveal"
-                    style="padding: 3rem 2rem; border-bottom: 4px solid var(--primary);">
+                <div class="card glass-panel text-center reveal"
+                    style="padding: 3.5rem 2.5rem; border: none; box-shadow: var(--shadow-lg);">
                     <div
-                        style="background: rgba(8, 145, 178, 0.1); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem;">
-                        <i data-lucide="gift" size="40" color="var(--primary)"></i>
+                        style="background: linear-gradient(135deg, rgba(8, 145, 178, 0.1) 0%, rgba(8, 145, 178, 0.05) 100%); width: 90px; height: 90px; border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; transform: rotate(-3deg);">
+                        <i data-lucide="gift" size="44" color="var(--primary)"></i>
                     </div>
-                    <h3>物資捐贈</h3>
-                    <p class="text-muted mb-8">除了金援，我們也歡迎白米、奶粉、乾貨等民生必需品。請先查看我們的「即時物資需求清單」再行寄送。</p>
-                    <a href="#" class="btn btn-secondary" style="width: 100%;">查看物資清單</a>
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">物資捐贈</h3>
+                    <p class="text-muted mb-8" style="font-size: 0.95rem; line-height: 1.6;">
+                        除了金援，我們也歡迎白米、奶粉等必備品。請先查看我們的「需求清單」再行寄送。</p>
+                    <a href="#" class="btn btn-secondary"
+                        style="width: 100%; border-radius: 12px; padding: 1rem;">查看物資清單</a>
                 </div>
+
             </div>
 
             <div id="report" class="reveal"
@@ -131,34 +131,59 @@
                     </div>
                 </div>
 
-                <div style="overflow-x: auto;">
-                    <table style="width: 100%; border-collapse: collapse; min-width: 600px;">
+                <div style="overflow-x: auto; border-radius: 1rem; border: 1px solid var(--border);">
+                    <table style="width: 100%; border-collapse: collapse; min-width: 700px; font-size: 0.95rem;">
                         <thead>
-                            <tr style="background: var(--background); text-align: left;">
-                                <th style="padding: 1rem; border-bottom: 2px solid var(--border);">捐款日期</th>
-                                <th style="padding: 1rem; border-bottom: 2px solid var(--border);">捐款人姓名/單位</th>
-                                <th style="padding: 1rem; border-bottom: 2px solid var(--border); text-align: right;">
-                                    金額(NT$)</th>
-                                <th style="padding: 1rem; border-bottom: 2px solid var(--border);">指定用途</th>
-                                <th style="padding: 1rem; border-bottom: 2px solid var(--border);">收據編號</th>
+                            <tr style="background: rgba(8, 145, 178, 0.03); text-align: left;">
+                                <th
+                                    style="padding: 1.25rem; border-bottom: 2px solid var(--border); font-weight: 700; color: var(--text);">
+                                    捐款日期</th>
+                                <th
+                                    style="padding: 1.25rem; border-bottom: 2px solid var(--border); font-weight: 700; color: var(--text);">
+                                    捐款人姓名/單位</th>
+                                <th
+                                    style="padding: 1.25rem; border-bottom: 2px solid var(--border); font-weight: 700; color: var(--text); text-align: right;">
+                                    金額 (TWD)</th>
+                                <th
+                                    style="padding: 1.25rem; border-bottom: 2px solid var(--border); font-weight: 700; color: var(--text);">
+                                    指定用途</th>
+                                <th
+                                    style="padding: 1.25rem; border-bottom: 2px solid var(--border); font-weight: 700; color: var(--text);">
+                                    收據編號</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td colspan="5" style="padding: 4rem; text-align: center; color: #94a3b8;">
-                                    <i data-lucide="database" size="48" style="opacity: 0.3; margin-bottom: 1rem;"></i>
-                                    <p>目前尚無紀錄（網站建立測試示範區）</p>
+                            <tr style="transition: background 0.2s;">
+                                <td colspan="5"
+                                    style="padding: 5rem 1rem; text-align: center; color: #94a3b8; background: white;">
+                                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+                                        <div
+                                            style="background: var(--background); width: 64px; height: 64px; border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0.6;">
+                                            <i data-lucide="search-x" size="32"></i>
+                                        </div>
+                                        <div style="max-width: 300px;">
+                                            <p style="font-weight: 600; color: var(--text); margin-bottom: 0.25rem;">
+                                                尚無公開紀錄</p>
+                                            <p style="font-size: 0.85rem;">本區塊為系統排版示範。實際捐款紀錄將於入帳後三個工作日內同步於此。</p>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
 
-                <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem;">
-                    <button class="btn btn-secondary">查詢過往紀錄</button>
-                    <button class="btn btn-secondary" style="background: white;"><i data-lucide="download" size="16"
-                            style="margin-right: 8px; vertical-align: middle;"></i> 年度經費報告</button>
+                <div style="margin-top: 3rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;">
+                    <button class="btn btn-secondary"
+                        style="border-radius: 12px; padding: 0.75rem 2rem; display: flex; align-items: center; gap: 0.5rem;">
+                        <i data-lucide="history" size="18"></i> 查詢歷年徵信
+                    </button>
+                    <button class="btn glass-panel"
+                        style="border-radius: 12px; padding: 0.75rem 2rem; display: flex; align-items: center; gap: 0.5rem; background: white; border: 1px solid var(--border);">
+                        <i data-lucide="download-cloud" size="18" class="text-primary"></i> 2024 年度經費報告 (PDF)
+                    </button>
                 </div>
+
             </div>
 
             <div style="margin-top: 4rem; text-align: center;">
@@ -210,20 +235,7 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
-                class="reveal">
-                <div style="max-width: 500px;">
-                    <h4 class="mb-2">訂閱心雲電子報</h4>
-                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
-                </div>
-                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
-                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
-                    <input type="email" placeholder="您的電子郵件"
-                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
-                        required>
-                    <button type="submit" class="btn btn-primary">訂閱</button>
-                </form>
-            </div>
+
             <div class="copyright">
                 &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a>
             </div>

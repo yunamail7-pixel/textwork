@@ -15,14 +15,6 @@
 </head>
 
 <body>
-    <!-- Prototype Notice Banner -->
-    <div
-        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
-        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
-            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
-        </div>
-    </div>
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -147,45 +139,66 @@
 
             <div style="margin-top: 5rem;" class="reveal" id="apply">
                 <div class="card"
-                    style="padding: 3rem; max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-lg);">
-                    <h2 class="text-center mb-8">線上救助申請表</h2>
+                    style="padding: 3.5rem; max-width: 850px; margin: 0 auto; box-shadow: var(--shadow-lg); border-top: 5px solid var(--primary);">
+                    <div class="text-center mb-12">
+                        <h2 class="mb-2">線上救助申請表</h2>
+                        <p class="text-muted">請填寫基本資料，我們將由專人與您聯繫。</p>
+                    </div>
                     <form
-                        onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-center py-12\'><i data-lucide=\'check-circle\' size=\'64\' color=\'#10b981\'></i><h3 class=\'mt-4\'>申請已送出</h3><p class=\'text-muted\'>我們的社工人員將會盡快與您聯繫。</p></div>'; lucide.createIcons();">
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        onsubmit="event.preventDefault(); this.innerHTML='<div class=\'text-center py-12\'><div style=\'display:inline-flex; background:%23ecfdf5; padding:1.5rem; border-radius:50%; margin-bottom:1.5rem;\'><i data-lucide=\'check-circle\' size=\'48\' color=\'%2310b981\'></i></div><h3 class=\'mb-2\'>申請已成功送出</h3><p class=\'text-muted\'>感謝您的信賴。心雲社工人員將於 3 個工作日內主動與您電話聯繫，請留意陌生門號。</p><button onclick=\'location.reload()\' class=\'btn btn-secondary mt-8\'>返回表單</button></div>'; lucide.createIcons();">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
                             <div class="form-group">
-                                <label class="form-label">申請人姓名</label>
-                                <input type="text" class="form-input" required placeholder="請輸入姓名">
+                                <label class="form-label"><i data-lucide="user" size="16"></i> 申請人姓名</label>
+                                <div class="form-icon-wrapper">
+                                    <i data-lucide="user" size="18"></i>
+                                    <input type="text" class="form-input" required placeholder="例如：王小明">
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">聯絡電話</label>
-                                <input type="tel" class="form-input" required placeholder="0912-345-678">
+                                <label class="form-label"><i data-lucide="phone" size="16"></i> 聯絡電話</label>
+                                <div class="form-icon-wrapper">
+                                    <i data-lucide="phone" size="18"></i>
+                                    <input type="tel" class="form-input" required placeholder="0912-345-678">
+                                </div>
                             </div>
                         </div>
-                        <div class="form-group mb-4">
-                            <label class="form-label">居住地址</label>
-                            <input type="text" class="form-input" required placeholder="請輸入詳細地址">
+                        <div class="form-group mb-8">
+                            <label class="form-label"><i data-lucide="map-pin" size="16"></i> 居住地址</label>
+                            <div class="form-icon-wrapper">
+                                <i data-lucide="map-pin" size="18"></i>
+                                <input type="text" class="form-input" required placeholder="請輸入詳細居住地址（包含縣市、區）">
+                            </div>
                         </div>
-                        <div class="form-group mb-4">
-                            <label class="form-label">申請類別</label>
-                            <select class="form-input">
-                                <option>急難救助</option>
-                                <option>教育補助</option>
-                                <option>長者關懷</option>
-                                <option>其他需求</option>
+                        <div class="form-group mb-8">
+                            <label class="form-label"><i data-lucide="tag" size="16"></i> 申請類別</label>
+                            <select class="form-select" required>
+                                <option value="" disabled selected>請選擇最具代表性的需求類別</option>
+                                <option>急難救助（醫療、突發事故）</option>
+                                <option>教育補助（助學金、學習設備）</option>
+                                <option>長者關懷（送餐、物資補給）</option>
+                                <option>其他特定社會救助需求</option>
                             </select>
                         </div>
-                        <div class="form-group mb-6">
-                            <label class="form-label">狀況簡述</label>
-                            <textarea class="form-textarea" required placeholder="請簡單描述您目前遇到的困難或需要協助的事項..."></textarea>
+                        <div class="form-group mb-12">
+                            <label class="form-label"><i data-lucide="file-text" size="16"></i> 狀況簡述</label>
+                            <textarea class="form-textarea" required
+                                placeholder="請簡單描述您目前遇到的具體困難、家庭成員狀況，或目前最迫切需要協助的事項..."></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary"
-                            style="width: 100%; padding: 1rem; font-size: 1.125rem;">送出申請</button>
+                        <button type="submit" class="btn btn-cta"
+                            style="width: 100%; padding: 1.25rem; font-size: 1.2rem; border-radius: var(--radius-lg); letter-spacing: 0.1em;">送出救助申請</button>
                     </form>
-                    <p class="text-center text-muted mt-6" style="font-size: 0.85rem;">
-                        如果您情況非常緊急，請直接撥打 24 小時急難專線：<span style="color: #ef4444; font-weight: 700;">(02) 1234-9999</span>
-                    </p>
+                    <div
+                        style="margin-top: 3rem; padding: 1.5rem; background: #fff1f2; border-radius: var(--radius); border-left: 4px solid #ef4444;">
+                        <p
+                            style="margin: 0; color: #991b1b; font-size: 0.95rem; display: flex; align-items: center; gap: 0.75rem;">
+                            <i data-lucide="alert-circle" size="20"></i>
+                            <span>如果您情況非常緊急，請直接撥打 24 小時急難專線：<strong style="font-size: 1.1rem;">(02)
+                                    1234-9999</strong></span>
+                        </p>
+                    </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -227,20 +240,7 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
-                class="reveal">
-                <div style="max-width: 500px;">
-                    <h4 class="mb-2">訂閱心雲電子報</h4>
-                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
-                </div>
-                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
-                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
-                    <input type="email" placeholder="您的電子郵件"
-                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
-                        required>
-                    <button type="submit" class="btn btn-primary">訂閱</button>
-                </form>
-            </div>
+
             <div class="copyright">
                 &copy; 2026 心雲基金會. All rights reserved.
             </div>

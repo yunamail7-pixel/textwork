@@ -16,13 +16,7 @@
 
 <body>
     <!-- Prototype Notice Banner -->
-    <div
-        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
-        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
-            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
-        </div>
-    </div>
+
 
     <nav class="navbar">
         <div class="container">
@@ -50,6 +44,7 @@
         </div>
     </nav>
 
+
     <header class="page-header section text-center parallax-bg"
         style="background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url('images/services.png');">
         <div class="container reveal">
@@ -62,12 +57,18 @@
     <!-- Navigation Anchors -->
     <style>
         .subnav-sticky {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 73px;
+            /* Matches navbar height + padding */
             z-index: 900;
-            transition: top 0.3s ease-in-out;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .subnav-sticky {
+            background-color: rgba(15, 23, 42, 0.9);
         }
 
         body.nav-hidden .subnav-sticky {
@@ -138,21 +139,33 @@
                     <h2 class="mb-4">教育培力與翻轉</h2>
                     <p class="text-muted mb-6">知識與技能是翻轉貧窮的唯一槓桿。我們不只提供助學金，更著重於心理建設與職能培力，引導孩子看見生命的無限可能。</p>
 
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 1.5rem;">
-                        <div class="card" style="background: white; border-radius: var(--radius-lg);">
-                            <h4 class="mb-2">數位平權：偏鄉教學中心</h4>
-                            <p class="text-muted" style="font-size: 0.9rem;">
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                        <div class="card glass-panel" style="border-left: 4px solid var(--primary); padding: 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div style="background: rgba(8, 145, 178, 0.1); padding: 0.75rem; border-radius: 12px;">
+                                    <i data-lucide="monitor" color="var(--primary)"></i>
+                                </div>
+                                <h4 style="margin: 0;">數位平權：偏鄉教學中心</h4>
+                            </div>
+                            <p class="text-muted" style="font-size: 0.95rem; line-height: 1.7;">
                                 在資源匱乏的邊鄉建立數位教室，提供平板設備與專業線上課程，縮短數位落差，讓孩子接軌現代知識趨勢。</p>
                         </div>
-                        <div class="card" style="background: white; border-radius: var(--radius-lg);">
-                            <h4 class="mb-2">星雲助學金與職能營隊</h4>
-                            <p class="text-muted" style="font-size: 0.9rem;">
+                        <div class="card glass-panel" style="border-left: 4px solid var(--secondary); padding: 2rem;">
+                            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem;">
+                                <div
+                                    style="background: rgba(236, 72, 153, 0.1); padding: 0.75rem; border-radius: 12px;">
+                                    <i data-lucide="graduation-cap" style="color: var(--secondary);"></i>
+                                </div>
+                                <h4 style="margin: 0;">星雲助學金與職能營隊</h4>
+                            </div>
+                            <p class="text-muted" style="font-size: 0.95rem; line-height: 1.7;">
                                 定期發放學雜費補助，並舉辦職業探索營，邀請各行各業專業人士分享經驗，點燃孩子們對未來的夢想火種。</p>
                         </div>
                     </div>
+
                 </div>
                 <div style="flex: 1; min-width: 310px;" class="reveal">
-                    <img src="images/education_mentor.png" alt="教育培力"
+                    <img src="images/education_mentor.png" alt="教育培力" loading="lazy"
                         style="border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%;">
                 </div>
             </div>
@@ -162,23 +175,33 @@
     <section class="section">
         <div class="container text-center reveal">
             <h2 class="mb-8">我們的影響力指標</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 3rem; justify-content: center;">
-                <div style="flex: 1; min-width: 180px;">
-                    <div style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
+            <div style="display: flex; flex-wrap: wrap; gap: 4rem; justify-content: center; margin-top: 4rem;">
+                <div style="text-align: center; flex: 1; min-width: 200px;" class="reveal">
+                    <div
+                        style="font-size: 4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; font-family: var(--font-display); line-height: 1;">
                         25+</div>
-                    <p class="text-muted">全台常態服務據點</p>
+                    <p class="text-muted"
+                        style="font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;">
+                        全台服務據點</p>
                 </div>
-                <div style="flex: 1; min-width: 180px;">
-                    <div style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
-                        1.5萬</div>
-                    <p class="text-muted">年度受惠總人次</p>
+                <div style="text-align: center; flex: 1; min-width: 200px;" class="reveal">
+                    <div
+                        style="font-size: 4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; font-family: var(--font-display); line-height: 1;">
+                        1.5M</div>
+                    <p class="text-muted"
+                        style="font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;">
+                        年度受惠人次</p>
                 </div>
-                <div style="flex: 1; min-width: 180px;">
-                    <div style="font-size: 3rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem;">
-                        3.2億</div>
-                    <p class="text-muted">十年累積補助總金額(NT$)</p>
+                <div style="text-align: center; flex: 1; min-width: 200px;" class="reveal">
+                    <div
+                        style="font-size: 4rem; font-weight: 800; color: var(--primary); margin-bottom: 0.5rem; font-family: var(--font-display); line-height: 1;">
+                        3.2B</div>
+                    <p class="text-muted"
+                        style="font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; font-size: 0.8rem;">
+                        補助總額 (TWD)</p>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -262,7 +285,6 @@
         </div>
     </section>
     <footer class="footer">
-        <!-- (Same footer content) -->
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -301,25 +323,22 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
-                class="reveal">
-                <div style="max-width: 500px;">
-                    <h4 class="mb-2">訂閱心雲電子報</h4>
-                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
-                </div>
-                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
-                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
-                    <input type="email" placeholder="您的電子郵件"
-                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
-                        required>
-                    <button type="submit" class="btn btn-primary">訂閱</button>
-                </form>
-            </div>
+
             <div class="copyright">
-                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a>
+                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a> | <a href="login.html"
+                    style="color: inherit; opacity: 0.5; text-decoration: none; font-size: 0.9em;">員工專區</a>
             </div>
         </div>
     </footer>
+
+    <!-- Prototype Notice Banner (Moved to tail) -->
+    <div class="prototype-notice">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+
 
     <script src="js/main.js"></script>
     <script>

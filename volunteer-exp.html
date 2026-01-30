@@ -16,13 +16,7 @@
 
 <body>
     <!-- Prototype Notice Banner -->
-    <div
-        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
-        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
-            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
-        </div>
-    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
@@ -63,70 +57,107 @@
         <div class="container">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem;">
                 <!-- Volunteer 1 -->
-                <div class="card reveal" style="padding: 2.5rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                        <div
-                            style="width: 64px; height: 64px; border-radius: 50%; background: #e0f2fe; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: var(--primary);">
-                            張</div>
-                        <div>
-                            <h4 style="margin: 0;">張小姐</h4>
-                            <p class="text-muted" style="font-size: 0.85rem; margin: 0;">服務資歷：2 年</p>
+                <div class="card glass-panel reveal" style="padding: 3rem; border: none; box-shadow: var(--shadow);">
+                    <div style="position: relative; margin-bottom: 2.5rem;">
+                        <div style="position: absolute; top: -1rem; right: -0.5rem; opacity: 0.1;">
+                            <i data-lucide="quote" size="48" color="var(--primary)"></i>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1.25rem;">
+                            <div
+                                style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: var(--primary); box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+                                張</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.15rem; color: var(--text);">張曉芳</h4>
+                                <p class="text-muted"
+                                    style="font-size: 0.85rem; margin: 0; background: rgba(8, 145, 178, 0.05); padding: 2px 8px; border-radius: 4px; display: inline-block;">
+                                    服務資歷：2 年</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-muted" style="line-height: 1.8; font-style: italic;">
-                        「在心雲服務的這兩年，我才真正體會到『施比受更有福』。每次看到長輩們期待我們到訪的眼神，那種被需要的感覺，是我在忙碌職場中得不到的救贖。」</p>
-                    <div style="margin-top: 1.5rem; color: #fbbf24; display: flex; gap: 4px;">
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                    <p
+                        style="line-height: 1.8; color: var(--text); font-size: 1.05rem; font-weight: 500; font-style: italic; position: relative; z-index: 1;">
+                        「在心雲服務的這兩年，我才真正體會到『施比受更有福』。每次看到長輩們期待我們到訪的眼神，那種被需要的感覺，是我在忙碌職場中得不到的救贖。」
+                    </p>
+                    <div
+                        style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-size: 0.8rem; color: #94a3b8;">服務領域：老人送餐與關懷</span>
+                        <div style="color: #fbbf24; display: flex; gap: 2px;">
+                            <i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14"
+                                fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i
+                                data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14"
+                                fill="currentColor"></i>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Volunteer 2 -->
-                <div class="card reveal" style="padding: 2.5rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                        <div
-                            style="width: 64px; height: 64px; border-radius: 50%; background: #fef3c7; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #d97706;">
-                            王</div>
-                        <div>
-                            <h4 style="margin: 0;">王同學</h4>
-                            <p class="text-muted" style="font-size: 0.85rem; margin: 0;">服務資歷：6 個月</p>
+                <div class="card glass-panel reveal" style="padding: 3rem; border: none; box-shadow: var(--shadow);">
+                    <div style="position: relative; margin-bottom: 2.5rem;">
+                        <div style="position: absolute; top: -1rem; right: -0.5rem; opacity: 0.1;">
+                            <i data-lucide="quote" size="48" color="var(--primary)"></i>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1.25rem;">
+                            <div
+                                style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: #d97706; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+                                王</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.15rem; color: var(--text);">王小明</h4>
+                                <p class="text-muted"
+                                    style="font-size: 0.85rem; margin: 0; background: rgba(217, 119, 6, 0.05); padding: 2px 8px; border-radius: 4px; display: inline-block;">
+                                    服務資歷：6 個月</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-muted" style="line-height: 1.8; font-style: italic;">
-                        「參與偏鄉數位教學後，原本是我要教孩子們使用電腦，沒想到反而是孩子們對生活的純粹與開朗教會了我。心雲提供的培訓非常完整，讓我在服務過程中也能不斷成長。」</p>
-                    <div style="margin-top: 1.5rem; color: #fbbf24; display: flex; gap: 4px;">
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                    <p
+                        style="line-height: 1.8; color: var(--text); font-size: 1.05rem; font-weight: 500; font-style: italic; position: relative; z-index: 1;">
+                        「參與偏鄉數位教學後，原本是我要教孩子們使用電腦，沒想到反而是孩子們對生活的純粹與開朗教會了我。心雲提供的培訓非常完整。」
+                    </p>
+                    <div
+                        style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-size: 0.8rem; color: #94a3b8;">服務領域：偏鄉數位教室</span>
+                        <div style="color: #fbbf24; display: flex; gap: 2px;">
+                            <i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14"
+                                fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i
+                                data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14"
+                                fill="currentColor"></i>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Volunteer 3 -->
-                <div class="card reveal" style="padding: 2.5rem;">
-                    <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
-                        <div
-                            style="width: 64px; height: 64px; border-radius: 50%; background: #dcfce7; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: 700; color: #16a34a;">
-                            李</div>
-                        <div>
-                            <h4 style="margin: 0;">李大哥</h4>
-                            <p class="text-muted" style="font-size: 0.85rem; margin: 0;">服務資歷：5 年</p>
+                <div class="card glass-panel reveal" style="padding: 3rem; border: none; box-shadow: var(--shadow);">
+                    <div style="position: relative; margin-bottom: 2.5rem;">
+                        <div style="position: absolute; top: -1rem; right: -0.5rem; opacity: 0.1;">
+                            <i data-lucide="quote" size="48" color="var(--primary)"></i>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 1.25rem;">
+                            <div
+                                style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; font-weight: 800; color: #16a34a; box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);">
+                                李</div>
+                            <div>
+                                <h4 style="margin: 0; font-size: 1.15rem; color: var(--text);">李大衛</h4>
+                                <p class="text-muted"
+                                    style="font-size: 0.85rem; margin: 0; background: rgba(22, 163, 74, 0.05); padding: 2px 8px; border-radius: 4px; display: inline-block;">
+                                    服務資歷：5 年</p>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-muted" style="line-height: 1.8; font-style: italic;">
-                        「退休後，心雲成了我的第二個家。這裡的團隊非常專業且透明，讓我確信每一分努力都能真正落在實處。能將自己過去的專業回饋給社會，是人生下半場最棒的事。」</p>
-                    <div style="margin-top: 1.5rem; color: #fbbf24; display: flex; gap: 4px;">
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
-                        <i data-lucide="star" size="18" fill="currentColor"></i>
+                    <p
+                        style="line-height: 1.8; color: var(--text); font-size: 1.05rem; font-weight: 500; font-style: italic; position: relative; z-index: 1;">
+                        「退休後，心雲成了我的第二個家。這裡的團隊非常專業且透明，讓我確信每一分努力都能真正落在實處。能將自己的專業回饋社會真好。」
+                    </p>
+                    <div
+                        style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between;">
+                        <span style="font-size: 0.8rem; color: #94a3b8;">服務領域：行政諮詢與培力</span>
+                        <div style="color: #fbbf24; display: flex; gap: 2px;">
+                            <i data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14"
+                                fill="currentColor"></i><i data-lucide="star" size="14" fill="currentColor"></i><i
+                                data-lucide="star" size="14" fill="currentColor"></i><i data-lucide="star" size="14"
+                                fill="currentColor"></i>
+                        </div>
                     </div>
                 </div>
+
             </div>
 
             <div style="margin-top: 6rem; background: var(--primary); color: white; padding: 4rem; border-radius: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 2rem;"
@@ -179,20 +210,7 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
-                class="reveal">
-                <div style="max-width: 500px;">
-                    <h4 class="mb-2">訂閱心雲電子報</h4>
-                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
-                </div>
-                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
-                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
-                    <input type="email" placeholder="您的電子郵件"
-                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
-                        required>
-                    <button type="submit" class="btn btn-primary">訂閱</button>
-                </form>
-            </div>
+
             <div class="copyright">
                 &copy; 2026 心雲基金會. All rights reserved. (網站建立測試示範)
             </div>

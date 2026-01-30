@@ -55,13 +55,7 @@
 
 <body>
     <!-- Prototype Notice Banner -->
-    <div
-        style="background: #f8fafc; color: #64748b; padding: 10px 0; text-align: center; font-size: 0.85rem; border-bottom: 1px solid #e2e8f0; font-weight: 400;">
-        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
-            <i data-lucide="info" size="14" style="color: #94a3b8;"></i>
-            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
-        </div>
-    </div>
+
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -106,7 +100,7 @@
                     <p class="text-muted mb-10">如果您有任何疑問、合作意向或需要協助，歡迎透過以下方式聯絡我們，我們將於 24 小時內回覆您。</p>
 
                     <ul style="display: flex; flex-direction: column; gap: 2.5rem;">
-                        <li style="display: flex; gap: 1.25rem;">
+                        <li style="display: flex; gap: 2.5rem;">
                             <div
                                 style="background-color: rgba(8, 145, 178, 0.1); padding: 1rem; border-radius: 1rem; height: fit-content; flex-shrink: 0;">
                                 <i data-lucide="map-pin" color="var(--primary)" size="24"></i>
@@ -117,7 +111,7 @@
                                 </p>
                             </div>
                         </li>
-                        <li style="display: flex; gap: 1.25rem;">
+                        <li style="display: flex; gap: 2.5rem;">
                             <div
                                 style="background-color: rgba(8, 145, 178, 0.1); padding: 1rem; border-radius: 1rem; height: fit-content; flex-shrink: 0;">
                                 <i data-lucide="phone-call" color="var(--primary)" size="24"></i>
@@ -130,7 +124,7 @@
                                 <p class="text-muted" style="font-size: 0.875rem;">服務時間：週一至週五 09:00 - 18:30</p>
                             </div>
                         </li>
-                        <li style="display: flex; gap: 1.25rem;">
+                        <li style="display: flex; gap: 2.5rem;">
                             <div
                                 style="background-color: rgba(8, 145, 178, 0.1); padding: 1rem; border-radius: 1rem; height: fit-content; flex-shrink: 0;">
                                 <i data-lucide="mail" color="var(--primary)" size="24"></i>
@@ -246,7 +240,6 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <!-- (Same footer content) -->
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -284,25 +277,22 @@
                     </div>
                 </div>
             </div>
-            <div style="margin-top: 3rem; padding-top: 3rem; border-top: 1px solid var(--border); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 2rem;"
-                class="reveal">
-                <div style="max-width: 500px;">
-                    <h4 class="mb-2">訂閱心雲電子報</h4>
-                    <p class="text-muted" style="font-size: 0.9rem; margin: 0;">搶先獲取最新的服務故事與活動快訊，您的關注就是最大的支持。</p>
-                </div>
-                <form style="display: flex; gap: 0.5rem; flex: 1; max-width: 400px;"
-                    onsubmit="event.preventDefault(); alert('感謝您的訂閱！'); this.reset();">
-                    <input type="email" placeholder="您的電子郵件"
-                        style="flex: 1; padding: 0.75rem 1rem; border: 1px solid var(--border); border-radius: var(--radius-sm); font-family: inherit;"
-                        required>
-                    <button type="submit" class="btn btn-primary">訂閱</button>
-                </form>
-            </div>
+
             <div class="copyright">
-                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a>
+                &copy; 2026 心雲基金會. All rights reserved. | <a href="#">隱私權政策</a> | <a href="login.html"
+                    style="color: inherit; opacity: 0.5; text-decoration: none; font-size: 0.9em;">員工專區</a>
             </div>
         </div>
     </footer>
+
+    <!-- Prototype Notice Banner (Moved to tail) -->
+    <div class="prototype-notice">
+        <div class="container" style="display: flex; align-items: center; justify-content: center; gap: 8px;">
+            <i data-lucide="info" size="14"></i>
+            <span>專案展示提醒：本網站目前為系統功能測試原型，內容均為虛擬數據。資料採用瀏覽器區域儲存 (Local Storage)。</span>
+        </div>
+    </div>
+
 
     <script src="js/main.js"></script>
     <script>

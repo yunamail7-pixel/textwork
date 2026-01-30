@@ -139,4 +139,114 @@ document.addEventListener('DOMContentLoaded', () => {
 
         lastScrollTop = scrollTop;
     });
+    // --- Phase 4: Accessibility & Dark Mode ---
+    const setupAccessibility = () => {
+        const navbarContainer = document.querySelector('.navbar .container');
+        if (!navbarContainer) return;
+
+        // Create UI controls container
+        const controls = document.createElement('div');
+        controls.className = 'nav-controls';
+        controls.style.display = 'flex';
+        controls.style.alignItems = 'center';
+        controls.style.gap = '1rem';
+        controls.style.marginLeft = '1.5rem';
+
+        // Dark Mode Toggle
+        const themeToggle = document.createElement('button');
+        themeToggle.className = 'theme-toggle btn-icon';
+        themeToggle.setAttribute('aria-label', '切換深淺模式');
+        themeToggle.innerHTML = '<i data-lucide="moon" size="20"></i>';
+
+        // Font Size Controls
+        const fontControls = document.createElement('div');
+        fontControls.style.display = 'flex';
+        fontControls.style.alignItems = 'center';
+        fontControls.style.gap = '0.5rem';
+        fontControls.style.borderLeft = '1px solid var(--border)';
+        fontControls.style.paddingLeft = '1rem';
+
+        const btnFontIncr = document.createElement('button');
+        btnFontIncr.className = 'btn-icon';
+        btnFontIncr.innerHTML = '<span style="font-weight: 700; font-size: 1.1rem;">A+</span>';
+        btnFontIncr.setAttribute('aria-label', '字體放大');
+
+        const btnFontDecr = document.createElement('button');
+        btnFontDecr.className = 'btn-icon';
+        btnFontDecr.innerHTML = '<span style="font-weight: 500; font-size: 0.8rem;">A-</span>';
+        btnFontDecr.setAttribute('aria-label', '字體縮小');
+
+        fontControls.appendChild(btnFontDecr);
+        fontControls.appendChild(btnFontIncr);
+
+        controls.appendChild(themeToggle);
+        controls.appendChild(fontControls);
+
+        // Responsive handling
+        if (window.innerWidth > 768) {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu) {
+                // Insert BEFORE nav-menu for better balance
+                navbarContainer.insertBefore(controls, navMenu.nextSibling);
+            } else {
+                navbarContainer.appendChild(controls);
+            }
+        } else {
+            const navMenu = document.querySelector('.nav-menu');
+            if (navMenu) {
+                controls.style.margin = '2rem 0 0 0';
+                controls.style.width = '100%';
+                controls.style.justifyContent = 'space-between';
+                navMenu.appendChild(controls);
+            }
+        }
+
+
+        // Theme Logic
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        updateThemeIcon(currentTheme);
+
+        themeToggle.addEventListener('click', () => {
+            const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+
+        function updateThemeIcon(theme) {
+            const icon = themeToggle.querySelector('i');
+            if (icon) {
+                icon.setAttribute('data-lucide', theme === 'dark' ? 'sun' : 'moon');
+                if (window.lucide) lucide.createIcons();
+            }
+        }
+
+        // Font Scale Logic
+        let fontScale = parseFloat(localStorage.getItem('fontScale')) || 1.0;
+        document.documentElement.style.setProperty('--font-scale', fontScale);
+
+        btnFontIncr.addEventListener('click', () => {
+            if (fontScale < 1.4) {
+                fontScale += 0.1;
+                updateFontScale();
+            }
+        });
+
+        btnFontDecr.addEventListener('click', () => {
+            if (fontScale > 0.8) {
+                fontScale -= 0.1;
+                updateFontScale();
+            }
+        });
+
+        function updateFontScale() {
+            document.documentElement.style.setProperty('--font-scale', fontScale);
+            localStorage.setItem('fontScale', fontScale);
+        }
+
+        if (window.lucide) lucide.createIcons();
+    };
+
+    setupAccessibility();
 });
