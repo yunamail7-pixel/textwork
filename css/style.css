@@ -87,7 +87,7 @@ body {
     order: -1;
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 3000;
 }
 
 header,
@@ -340,7 +340,7 @@ select:focus {
     background-color: var(--surface);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 3000;
     border-bottom: 1px solid var(--border);
     padding: 0.75rem 0;
     transition: transform 0.3s ease-in-out, background-color 0.3s, border-color 0.3s;
@@ -394,7 +394,7 @@ select:focus {
     border: none;
     font-size: 1.75rem;
     color: var(--text);
-    z-index: 1100;
+    z-index: 3200;
     /* Higher than menu and overlay */
     position: relative;
     cursor: pointer;
