@@ -233,11 +233,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Font Scale Logic
         let fontScale = parseFloat(localStorage.getItem('fontScale')) || 1.0;
+        // Clamp initial value just in case
+        fontScale = Math.min(Math.max(fontScale, 0.8), 1.4);
         document.documentElement.style.setProperty('--font-scale', fontScale);
 
         btnFontIncr.addEventListener('click', () => {
             if (fontScale < 1.4) {
                 fontScale += 0.1;
+                // Round to 1 decimal to avoid floating point drift (e.g. 1.2000001)
+                fontScale = Math.round(fontScale * 10) / 10;
+                console.log('Font Scale Increased:', fontScale);
                 updateFontScale();
             }
         });
@@ -245,6 +250,8 @@ document.addEventListener('DOMContentLoaded', () => {
         btnFontDecr.addEventListener('click', () => {
             if (fontScale > 0.8) {
                 fontScale -= 0.1;
+                fontScale = Math.round(fontScale * 10) / 10;
+                console.log('Font Scale Decreased:', fontScale);
                 updateFontScale();
             }
         });

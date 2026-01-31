@@ -28,8 +28,9 @@
     --font-scale: 1;
 }
 
-html {
+:root {
     font-size: calc(100% * var(--font-scale));
+    transition: font-size 0.3s ease; /* Smooth transition for resizing */
 }
 
 /* Dark Mode Variables */
