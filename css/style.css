@@ -9,7 +9,7 @@
     --background: #ECFEFF;
     --surface: #FFFFFF;
     --text: #164E63;
-    --text-muted: #475569;
+    --text-muted: #334155;
     --border: #CFFAFE;
 
     --font-heading: 'Lexend', sans-serif;
@@ -26,6 +26,10 @@
 
     /* Accessibility Variables */
     --font-scale: 1;
+}
+
+html {
+    font-size: calc(100% * var(--font-scale));
 }
 
 /* Dark Mode Variables */
@@ -1045,5 +1049,65 @@ select:focus {
     .copyright {
         margin-top: 2rem;
         padding-top: 1.5rem;
+    }
+}
+/* Modern Hero Typography (Moved from inline) */
+.hero-title {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    font-weight: 800;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: white;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1.25rem;
+    justify-content: center;
+}
+
+.hero-actions .btn {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+.hero-btn-secondary {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.hero-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+        margin-bottom: 2.5rem !important;
+        padding: 0 1rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 2rem;
     }
 }
