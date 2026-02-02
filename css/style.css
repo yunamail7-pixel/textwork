@@ -254,6 +254,7 @@ select:focus {
 .btn-icon span {
     font-family: var(--font-heading);
     transition: color 0.2s;
+    pointer-events: none; /* Ensure clicks pass through to the button */
 }
 
 [data-theme="dark"] .btn-icon:hover {
@@ -264,6 +265,8 @@ select:focus {
     border-left: 1px solid var(--border);
     padding-left: 1rem;
     height: 32px;
+    position: relative;
+    z-index: 3001; /* Ensure above other nav elements */
 }
 
 @media (max-width: 768px) {
