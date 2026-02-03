@@ -232,12 +232,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Font Scale Logic
-        let fontScale = parseFloat(localStorage.getItem('fontScale')) || 1.0;
-        document.documentElement.style.setProperty('--font-scale', fontScale);
+        let fontScale = 1.0;
+        try {
+            fontScale = parseFloat(localStorage.getItem('fontScale')) || 1.0;
+        } catch (e) {
+            console.warn('LocalStorage access denied, using default font scale');
+        }
+
+        // Clamp initial value just in case
+        fontScale = Math.min(Math.max(fontScale, 0.8), 1.4);
+
+        // Apply initial scale immediately using both techniques
+        updateFontScale(true); // pass true to skip saving on initial load
 
         btnFontIncr.addEventListener('click', () => {
             if (fontScale < 1.4) {
                 fontScale += 0.1;
+                // Round to 1 decimal to avoid floating point drift (e.g. 1.2000001)
+                fontScale = Math.round(fontScale * 10) / 10;
+                console.log('Font Scale Increased:', fontScale);
                 updateFontScale();
             }
         });
@@ -245,13 +258,27 @@ document.addEventListener('DOMContentLoaded', () => {
         btnFontDecr.addEventListener('click', () => {
             if (fontScale > 0.8) {
                 fontScale -= 0.1;
+                fontScale = Math.round(fontScale * 10) / 10;
+                console.log('Font Scale Decreased:', fontScale);
                 updateFontScale();
             }
         });
 
-        function updateFontScale() {
+        function updateFontScale(skipSave = false) {
+            // Technique 1: CSS Variable (for calc usage)
             document.documentElement.style.setProperty('--font-scale', fontScale);
-            localStorage.setItem('fontScale', fontScale);
+
+            // Technique 2: Direct Percentage (Robust fallback)
+            // 1.0 -> 100%, 1.1 -> 110%
+            document.documentElement.style.fontSize = `${Math.round(fontScale * 100)}%`;
+
+            if (!skipSave) {
+                try {
+                    localStorage.setItem('fontScale', fontScale);
+                } catch (e) {
+                    // Ignore storage errors
+                }
+            }
         }
 
         if (window.lucide) lucide.createIcons();
